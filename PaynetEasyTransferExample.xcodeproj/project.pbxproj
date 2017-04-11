@@ -1,0 +1,581 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A508EB071E81634C00D05615 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A508EB061E81634C00D05615 /* main.m */; };
+		A508EB0A1E81634C00D05615 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A508EB091E81634C00D05615 /* AppDelegate.m */; };
+		A508EB0D1E81634C00D05615 /* TransferController.m in Sources */ = {isa = PBXBuildFile; fileRef = A508EB0C1E81634C00D05615 /* TransferController.m */; };
+		A508EB101E81634C00D05615 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A508EB0E1E81634C00D05615 /* Main.storyboard */; };
+		A508EB121E81634C00D05615 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A508EB111E81634C00D05615 /* Assets.xcassets */; };
+		A50F90DE1E9AF51500C35165 /* NSDictionary+Values.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F90DD1E9AF51500C35165 /* NSDictionary+Values.m */; };
+		A50F90E11E9AF52E00C35165 /* NSMutableDictionary+Values.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F90E01E9AF52E00C35165 /* NSMutableDictionary+Values.m */; };
+		A52A87941E8A6E52008DD9FD /* Consumer.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A878C1E8A6E52008DD9FD /* Consumer.m */; };
+		A52A87951E8A6E52008DD9FD /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A878E1E8A6E52008DD9FD /* Session.m */; };
+		A52A87961E8A6E52008DD9FD /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A87901E8A6E52008DD9FD /* Card.m */; };
+		A52A87971E8A6E52008DD9FD /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A87911E8A6E52008DD9FD /* Transaction.m */; };
+		A52A879F1E8A8ACB008DD9FD /* SourceCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A879E1E8A8ACB008DD9FD /* SourceCardCell.m */; };
+		A52A87A21E8A8C7C008DD9FD /* DestCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A87A11E8A8C7C008DD9FD /* DestCardCell.m */; };
+		A52A87A51E8A8D14008DD9FD /* SubmitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A87A41E8A8D14008DD9FD /* SubmitCell.m */; };
+		A52A87B21E8AA41D008DD9FD /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A87B01E8AA41D008DD9FD /* WebViewController.m */; };
+		A52A87C31E8BBA08008DD9FD /* transfer.html in Resources */ = {isa = PBXBuildFile; fileRef = A52A87C21E8BBA08008DD9FD /* transfer.html */; };
+		A52A87C71E8BBC78008DD9FD /* NSBundle+Values.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A87C61E8BBC78008DD9FD /* NSBundle+Values.m */; };
+		A52A887F1E8D0732008DD9FD /* Rate.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A887E1E8D0732008DD9FD /* Rate.m */; };
+		A5C21CB71E92702600AB288F /* UIViewController+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C21CB61E92702600AB288F /* UIViewController+Alert.m */; };
+		A5C21CE21E927C9000AB288F /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5C21CE11E927C9000AB288F /* WebViewController.xib */; };
+		A5C21CF81E93C86100AB288F /* TestPaynetServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C21CF71E93C86100AB288F /* TestPaynetServer.m */; };
+		A5C21CFB1E93C98300AB288F /* TestServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C21CFA1E93C98300AB288F /* TestServer.m */; };
+		A5C21D011E94E88A00AB288F /* TestMerchantServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C21D001E94E88A00AB288F /* TestMerchantServer.m */; };
+		A5C21E0C1E9CDC8500AB288F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5C21E0A1E9CDC8500AB288F /* LaunchScreen.storyboard */; };
+		D899F492F948AC346B086B60 /* libPods-PaynetEasyTransferExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E3247A830C3C1E54C2DE071 /* libPods-PaynetEasyTransferExample.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0E3247A830C3C1E54C2DE071 /* libPods-PaynetEasyTransferExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PaynetEasyTransferExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		89D785DE0143BE0C7BDC4F00 /* Pods-PaynetEasyTransferExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaynetEasyTransferExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-PaynetEasyTransferExample/Pods-PaynetEasyTransferExample.release.xcconfig"; sourceTree = "<group>"; };
+		A508EB021E81634C00D05615 /* PaynetEasyTransferExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaynetEasyTransferExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A508EB061E81634C00D05615 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A508EB081E81634C00D05615 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A508EB091E81634C00D05615 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A508EB0B1E81634C00D05615 /* TransferController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransferController.h; sourceTree = "<group>"; };
+		A508EB0C1E81634C00D05615 /* TransferController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransferController.m; sourceTree = "<group>"; };
+		A508EB0F1E81634C00D05615 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A508EB111E81634C00D05615 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A508EB161E81634C00D05615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A50F90DC1E9AF51500C35165 /* NSDictionary+Values.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Values.h"; sourceTree = "<group>"; };
+		A50F90DD1E9AF51500C35165 /* NSDictionary+Values.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Values.m"; sourceTree = "<group>"; };
+		A50F90DF1E9AF52E00C35165 /* NSMutableDictionary+Values.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+Values.h"; sourceTree = "<group>"; };
+		A50F90E01E9AF52E00C35165 /* NSMutableDictionary+Values.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+Values.m"; sourceTree = "<group>"; };
+		A5153ECCD34E448297D14682 /* Pods-PaynetEasyTransferExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaynetEasyTransferExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PaynetEasyTransferExample/Pods-PaynetEasyTransferExample.debug.xcconfig"; sourceTree = "<group>"; };
+		A52A87891E8A6E52008DD9FD /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		A52A878C1E8A6E52008DD9FD /* Consumer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Consumer.m; sourceTree = "<group>"; };
+		A52A878D1E8A6E52008DD9FD /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
+		A52A878E1E8A6E52008DD9FD /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
+		A52A878F1E8A6E52008DD9FD /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
+		A52A87901E8A6E52008DD9FD /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		A52A87911E8A6E52008DD9FD /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
+		A52A87921E8A6E52008DD9FD /* Consumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Consumer.h; sourceTree = "<group>"; };
+		A52A879D1E8A8ACB008DD9FD /* SourceCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SourceCardCell.h; sourceTree = "<group>"; };
+		A52A879E1E8A8ACB008DD9FD /* SourceCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourceCardCell.m; sourceTree = "<group>"; };
+		A52A87A01E8A8C7C008DD9FD /* DestCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestCardCell.h; sourceTree = "<group>"; };
+		A52A87A11E8A8C7C008DD9FD /* DestCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestCardCell.m; sourceTree = "<group>"; };
+		A52A87A31E8A8D14008DD9FD /* SubmitCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmitCell.h; sourceTree = "<group>"; };
+		A52A87A41E8A8D14008DD9FD /* SubmitCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmitCell.m; sourceTree = "<group>"; };
+		A52A87AF1E8AA41D008DD9FD /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		A52A87B01E8AA41D008DD9FD /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		A52A87C21E8BBA08008DD9FD /* transfer.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = transfer.html; sourceTree = "<group>"; };
+		A52A87C51E8BBC78008DD9FD /* NSBundle+Values.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+Values.h"; sourceTree = "<group>"; };
+		A52A87C61E8BBC78008DD9FD /* NSBundle+Values.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Values.m"; sourceTree = "<group>"; };
+		A52A887D1E8D0732008DD9FD /* Rate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rate.h; sourceTree = "<group>"; };
+		A52A887E1E8D0732008DD9FD /* Rate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rate.m; sourceTree = "<group>"; };
+		A5C21CB51E92702600AB288F /* UIViewController+Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Alert.h"; sourceTree = "<group>"; };
+		A5C21CB61E92702600AB288F /* UIViewController+Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Alert.m"; sourceTree = "<group>"; };
+		A5C21CE11E927C9000AB288F /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
+		A5C21CF61E93C86100AB288F /* TestPaynetServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestPaynetServer.h; sourceTree = "<group>"; };
+		A5C21CF71E93C86100AB288F /* TestPaynetServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestPaynetServer.m; sourceTree = "<group>"; };
+		A5C21CF91E93C98300AB288F /* TestServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestServer.h; sourceTree = "<group>"; };
+		A5C21CFA1E93C98300AB288F /* TestServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestServer.m; sourceTree = "<group>"; };
+		A5C21CFF1E94E88A00AB288F /* TestMerchantServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMerchantServer.h; sourceTree = "<group>"; };
+		A5C21D001E94E88A00AB288F /* TestMerchantServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestMerchantServer.m; sourceTree = "<group>"; };
+		A5C21E0B1E9CDC8500AB288F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A508EAFF1E81634C00D05615 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D899F492F948AC346B086B60 /* libPods-PaynetEasyTransferExample.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2E9E52D7C0E57D9BCA757E8D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A5153ECCD34E448297D14682 /* Pods-PaynetEasyTransferExample.debug.xcconfig */,
+				89D785DE0143BE0C7BDC4F00 /* Pods-PaynetEasyTransferExample.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		44A884408DA29700D4CA3759 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0E3247A830C3C1E54C2DE071 /* libPods-PaynetEasyTransferExample.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A508EAF91E81634C00D05615 = {
+			isa = PBXGroup;
+			children = (
+				A508EB041E81634C00D05615 /* PaynetEasyTransferExample */,
+				2E9E52D7C0E57D9BCA757E8D /* Pods */,
+				44A884408DA29700D4CA3759 /* Frameworks */,
+				A508EB031E81634C00D05615 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A508EB031E81634C00D05615 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A508EB021E81634C00D05615 /* PaynetEasyTransferExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A508EB041E81634C00D05615 /* PaynetEasyTransferExample */ = {
+			isa = PBXGroup;
+			children = (
+				A508EB231E8166D100D05615 /* Models */,
+				A52A879C1E8A8A8A008DD9FD /* Views */,
+				A52A87AA1E8AA197008DD9FD /* Controlers */,
+				A5C21CF51E93BC6000AB288F /* TestServers */,
+				A52A87C41E8BBC3D008DD9FD /* Categories */,
+				A52A87C11E8BBA08008DD9FD /* Resources */,
+				A508EB081E81634C00D05615 /* AppDelegate.h */,
+				A508EB091E81634C00D05615 /* AppDelegate.m */,
+				A508EB0E1E81634C00D05615 /* Main.storyboard */,
+				A5C21E0A1E9CDC8500AB288F /* LaunchScreen.storyboard */,
+				A508EB111E81634C00D05615 /* Assets.xcassets */,
+				A508EB161E81634C00D05615 /* Info.plist */,
+				A508EB051E81634C00D05615 /* Supporting Files */,
+			);
+			path = PaynetEasyTransferExample;
+			sourceTree = "<group>";
+		};
+		A508EB051E81634C00D05615 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A508EB061E81634C00D05615 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A508EB231E8166D100D05615 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A52A87921E8A6E52008DD9FD /* Consumer.h */,
+				A52A878C1E8A6E52008DD9FD /* Consumer.m */,
+				A52A887D1E8D0732008DD9FD /* Rate.h */,
+				A52A887E1E8D0732008DD9FD /* Rate.m */,
+				A52A87891E8A6E52008DD9FD /* Card.h */,
+				A52A87901E8A6E52008DD9FD /* Card.m */,
+				A52A878F1E8A6E52008DD9FD /* Session.h */,
+				A52A878E1E8A6E52008DD9FD /* Session.m */,
+				A52A878D1E8A6E52008DD9FD /* Transaction.h */,
+				A52A87911E8A6E52008DD9FD /* Transaction.m */,
+			);
+			path = Models;
+			sourceTree = SOURCE_ROOT;
+		};
+		A52A879C1E8A8A8A008DD9FD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A52A879D1E8A8ACB008DD9FD /* SourceCardCell.h */,
+				A52A879E1E8A8ACB008DD9FD /* SourceCardCell.m */,
+				A52A87A01E8A8C7C008DD9FD /* DestCardCell.h */,
+				A52A87A11E8A8C7C008DD9FD /* DestCardCell.m */,
+				A52A87A31E8A8D14008DD9FD /* SubmitCell.h */,
+				A52A87A41E8A8D14008DD9FD /* SubmitCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A52A87AA1E8AA197008DD9FD /* Controlers */ = {
+			isa = PBXGroup;
+			children = (
+				A508EB0B1E81634C00D05615 /* TransferController.h */,
+				A508EB0C1E81634C00D05615 /* TransferController.m */,
+				A52A87AF1E8AA41D008DD9FD /* WebViewController.h */,
+				A52A87B01E8AA41D008DD9FD /* WebViewController.m */,
+				A5C21CE11E927C9000AB288F /* WebViewController.xib */,
+			);
+			name = Controlers;
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A52A87C11E8BBA08008DD9FD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A52A87C21E8BBA08008DD9FD /* transfer.html */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A52A87C41E8BBC3D008DD9FD /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				A50F90DC1E9AF51500C35165 /* NSDictionary+Values.h */,
+				A50F90DD1E9AF51500C35165 /* NSDictionary+Values.m */,
+				A50F90DF1E9AF52E00C35165 /* NSMutableDictionary+Values.h */,
+				A50F90E01E9AF52E00C35165 /* NSMutableDictionary+Values.m */,
+				A52A87C51E8BBC78008DD9FD /* NSBundle+Values.h */,
+				A52A87C61E8BBC78008DD9FD /* NSBundle+Values.m */,
+				A5C21CB51E92702600AB288F /* UIViewController+Alert.h */,
+				A5C21CB61E92702600AB288F /* UIViewController+Alert.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		A5C21CF51E93BC6000AB288F /* TestServers */ = {
+			isa = PBXGroup;
+			children = (
+				A5C21CF91E93C98300AB288F /* TestServer.h */,
+				A5C21CFA1E93C98300AB288F /* TestServer.m */,
+				A5C21CF61E93C86100AB288F /* TestPaynetServer.h */,
+				A5C21CF71E93C86100AB288F /* TestPaynetServer.m */,
+				A5C21CFF1E94E88A00AB288F /* TestMerchantServer.h */,
+				A5C21D001E94E88A00AB288F /* TestMerchantServer.m */,
+			);
+			path = TestServers;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A508EB011E81634C00D05615 /* PaynetEasyTransferExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A508EB191E81634C00D05615 /* Build configuration list for PBXNativeTarget "PaynetEasyTransferExample" */;
+			buildPhases = (
+				326B3A733F16EF9CA8C067AA /* [CP] Check Pods Manifest.lock */,
+				A508EAFE1E81634C00D05615 /* Sources */,
+				A508EAFF1E81634C00D05615 /* Frameworks */,
+				A508EB001E81634C00D05615 /* Resources */,
+				8AC4BA03BB3BA2805F08F3F8 /* [CP] Embed Pods Frameworks */,
+				580BB2F5B5D490980F9055EB /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PaynetEasyTransferExample;
+			productName = transfer;
+			productReference = A508EB021E81634C00D05615 /* PaynetEasyTransferExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A508EAFA1E81634C00D05615 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = payneteasy;
+				TargetAttributes = {
+					A508EB011E81634C00D05615 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A508EAFD1E81634C00D05615 /* Build configuration list for PBXProject "PaynetEasyTransferExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A508EAF91E81634C00D05615;
+			productRefGroup = A508EB031E81634C00D05615 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A508EB011E81634C00D05615 /* PaynetEasyTransferExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A508EB001E81634C00D05615 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A52A87C31E8BBA08008DD9FD /* transfer.html in Resources */,
+				A508EB121E81634C00D05615 /* Assets.xcassets in Resources */,
+				A5C21CE21E927C9000AB288F /* WebViewController.xib in Resources */,
+				A5C21E0C1E9CDC8500AB288F /* LaunchScreen.storyboard in Resources */,
+				A508EB101E81634C00D05615 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		326B3A733F16EF9CA8C067AA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		580BB2F5B5D490980F9055EB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PaynetEasyTransferExample/Pods-PaynetEasyTransferExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8AC4BA03BB3BA2805F08F3F8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PaynetEasyTransferExample/Pods-PaynetEasyTransferExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A508EAFE1E81634C00D05615 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A52A87941E8A6E52008DD9FD /* Consumer.m in Sources */,
+				A52A87971E8A6E52008DD9FD /* Transaction.m in Sources */,
+				A5C21CB71E92702600AB288F /* UIViewController+Alert.m in Sources */,
+				A52A87951E8A6E52008DD9FD /* Session.m in Sources */,
+				A508EB0D1E81634C00D05615 /* TransferController.m in Sources */,
+				A52A87961E8A6E52008DD9FD /* Card.m in Sources */,
+				A52A87A51E8A8D14008DD9FD /* SubmitCell.m in Sources */,
+				A52A87B21E8AA41D008DD9FD /* WebViewController.m in Sources */,
+				A52A87A21E8A8C7C008DD9FD /* DestCardCell.m in Sources */,
+				A5C21CFB1E93C98300AB288F /* TestServer.m in Sources */,
+				A52A87C71E8BBC78008DD9FD /* NSBundle+Values.m in Sources */,
+				A50F90E11E9AF52E00C35165 /* NSMutableDictionary+Values.m in Sources */,
+				A5C21D011E94E88A00AB288F /* TestMerchantServer.m in Sources */,
+				A508EB0A1E81634C00D05615 /* AppDelegate.m in Sources */,
+				A52A879F1E8A8ACB008DD9FD /* SourceCardCell.m in Sources */,
+				A50F90DE1E9AF51500C35165 /* NSDictionary+Values.m in Sources */,
+				A5C21CF81E93C86100AB288F /* TestPaynetServer.m in Sources */,
+				A508EB071E81634C00D05615 /* main.m in Sources */,
+				A52A887F1E8D0732008DD9FD /* Rate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A508EB0E1E81634C00D05615 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A508EB0F1E81634C00D05615 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A5C21E0A1E9CDC8500AB288F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A5C21E0B1E9CDC8500AB288F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A508EB171E81634C00D05615 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A508EB181E81634C00D05615 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A508EB1A1E81634C00D05615 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5153ECCD34E448297D14682 /* Pods-PaynetEasyTransferExample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/GCDWebServer\"",
+					"\"${PODS_ROOT}/Headers/Public/SHSPhoneComponent\"",
+					"\"${PODS_ROOT}/Headers/Public/TPKeyboardAvoiding\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/PaynetEasyTransferExample/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.payneteasy.PaynetEasyTransferExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A508EB1B1E81634C00D05615 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89D785DE0143BE0C7BDC4F00 /* Pods-PaynetEasyTransferExample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/GCDWebServer\"",
+					"\"${PODS_ROOT}/Headers/Public/SHSPhoneComponent\"",
+					"\"${PODS_ROOT}/Headers/Public/TPKeyboardAvoiding\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/PaynetEasyTransferExample/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.payneteasy.PaynetEasyTransferExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A508EAFD1E81634C00D05615 /* Build configuration list for PBXProject "PaynetEasyTransferExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A508EB171E81634C00D05615 /* Debug */,
+				A508EB181E81634C00D05615 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A508EB191E81634C00D05615 /* Build configuration list for PBXNativeTarget "PaynetEasyTransferExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A508EB1A1E81634C00D05615 /* Debug */,
+				A508EB1B1E81634C00D05615 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A508EAFA1E81634C00D05615 /* Project object */;
+}

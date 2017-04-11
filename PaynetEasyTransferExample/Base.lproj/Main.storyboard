@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5JV-wZ-H7W">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Перевод с карты на карту-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="TransferController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OrR-Ur-iRD" customClass="TPKeyboardAvoidingTableView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SourceCardCell" rowHeight="200" id="N0m-nI-mOS" customClass="SourceCardCell">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N0m-nI-mOS" id="27U-yF-gHz">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ПЕРЕВОД С КАРТЫ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dY1-ui-DTa">
+                                                    <rect key="frame" x="20" y="15" width="335" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="Ld4-mS-As9"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nO7-Hx-aOm">
+                                                    <rect key="frame" x="20" y="40" width="335" height="160"/>
+                                                    <subviews>
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CVC" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aNn-bx-s1r" customClass="SHSPhoneTextField">
+                                                            <rect key="frame" x="225" y="66" width="90" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="90" id="IbP-HC-YhP"/>
+                                                                <constraint firstAttribute="height" constant="30" id="oyB-q9-5pN"/>
+                                                            </constraints>
+                                                            <nil key="textColor"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next" secureTextEntry="YES"/>
+                                                        </textField>
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Владелец карты" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MBu-MM-e28">
+                                                            <rect key="frame" x="20" y="110" width="295" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="Sa6-IT-JQB"/>
+                                                            </constraints>
+                                                            <nil key="textColor"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" returnKeyType="next"/>
+                                                        </textField>
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Номер карты" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kkf-Ub-WcI" customClass="SHSPhoneTextField">
+                                                            <rect key="frame" x="20" y="21" width="295" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="fsH-He-D3x"/>
+                                                            </constraints>
+                                                            <nil key="textColor"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
+                                                        </textField>
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Месяц" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wVX-hy-elv" customClass="SHSPhoneTextField">
+                                                            <rect key="frame" x="20" y="66" width="70" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="BJs-UW-ziK"/>
+                                                                <constraint firstAttribute="width" constant="70" id="aVx-lO-W22"/>
+                                                            </constraints>
+                                                            <nil key="textColor"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
+                                                        </textField>
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Год" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="URp-g4-wDf" customClass="SHSPhoneTextField">
+                                                            <rect key="frame" x="98" y="66" width="70" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="70" id="ME3-yv-A9g"/>
+                                                                <constraint firstAttribute="height" constant="30" id="WKM-NG-45M"/>
+                                                            </constraints>
+                                                            <nil key="textColor"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
+                                                        </textField>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.89962284482758625" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="MBu-MM-e28" firstAttribute="top" secondItem="URp-g4-wDf" secondAttribute="bottom" constant="14" id="3Qb-W6-eYc"/>
+                                                        <constraint firstItem="Kkf-Ub-WcI" firstAttribute="leading" secondItem="nO7-Hx-aOm" secondAttribute="leading" constant="20" id="DjA-Pv-PWU"/>
+                                                        <constraint firstItem="URp-g4-wDf" firstAttribute="top" secondItem="Kkf-Ub-WcI" secondAttribute="bottom" constant="15" id="GZc-Xf-WmR"/>
+                                                        <constraint firstItem="aNn-bx-s1r" firstAttribute="top" secondItem="Kkf-Ub-WcI" secondAttribute="bottom" constant="15" id="H31-yH-cAJ"/>
+                                                        <constraint firstItem="MBu-MM-e28" firstAttribute="leading" secondItem="nO7-Hx-aOm" secondAttribute="leading" constant="20" id="TZx-aR-O7b"/>
+                                                        <constraint firstAttribute="trailing" secondItem="MBu-MM-e28" secondAttribute="trailing" constant="20" id="TfW-4y-bUM"/>
+                                                        <constraint firstItem="wVX-hy-elv" firstAttribute="top" secondItem="Kkf-Ub-WcI" secondAttribute="bottom" constant="15" id="WNI-ug-bDy"/>
+                                                        <constraint firstItem="Kkf-Ub-WcI" firstAttribute="top" secondItem="nO7-Hx-aOm" secondAttribute="top" constant="21" id="dfn-zx-Pl6"/>
+                                                        <constraint firstAttribute="trailing" secondItem="aNn-bx-s1r" secondAttribute="trailing" constant="20" id="gWH-bt-2sL"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Kkf-Ub-WcI" secondAttribute="trailing" constant="20" id="paH-Xx-KIP"/>
+                                                        <constraint firstItem="URp-g4-wDf" firstAttribute="leading" secondItem="wVX-hy-elv" secondAttribute="trailing" constant="8" id="qEu-yi-1os"/>
+                                                        <constraint firstItem="wVX-hy-elv" firstAttribute="leading" secondItem="nO7-Hx-aOm" secondAttribute="leading" constant="20" id="xcj-lD-4WS"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="nO7-Hx-aOm" firstAttribute="top" secondItem="27U-yF-gHz" secondAttribute="top" constant="40" id="1Sc-64-thz"/>
+                                                <constraint firstItem="dY1-ui-DTa" firstAttribute="top" secondItem="27U-yF-gHz" secondAttribute="top" constant="15" id="1cE-ie-hB7"/>
+                                                <constraint firstAttribute="trailing" secondItem="dY1-ui-DTa" secondAttribute="trailing" constant="20" id="Lln-bm-IFs"/>
+                                                <constraint firstAttribute="trailing" secondItem="nO7-Hx-aOm" secondAttribute="trailing" constant="20" id="VPO-yf-eQP"/>
+                                                <constraint firstAttribute="bottom" secondItem="nO7-Hx-aOm" secondAttribute="bottom" id="i9C-Ff-mw8"/>
+                                                <constraint firstItem="dY1-ui-DTa" firstAttribute="leading" secondItem="27U-yF-gHz" secondAttribute="leading" constant="20" id="oRa-k1-iI4"/>
+                                                <constraint firstItem="nO7-Hx-aOm" firstAttribute="leading" secondItem="27U-yF-gHz" secondAttribute="leading" constant="20" id="pCq-TU-IGh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="fieldCardHolder" destination="MBu-MM-e28" id="Pmc-0c-GVK"/>
+                                            <outlet property="fieldCardNumber" destination="Kkf-Ub-WcI" id="9WW-ge-9SR"/>
+                                            <outlet property="fieldExpiryMonth" destination="wVX-hy-elv" id="z3F-L3-G9L"/>
+                                            <outlet property="fieldExpiryYear" destination="URp-g4-wDf" id="Ayu-r6-TsU"/>
+                                            <outlet property="fieldSecurityCode" destination="aNn-bx-s1r" id="Kjm-Vy-oU0"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DestCardCell" rowHeight="200" id="0ar-Jr-HvC" customClass="DestCardCell">
+                                        <rect key="frame" x="0.0" y="228" width="375" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0ar-Jr-HvC" id="5JX-dd-G8I">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="НА КАРТУ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vK-hr-m1A">
+                                                    <rect key="frame" x="20" y="15" width="335" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="Ebs-0p-slb"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uk9-Y2-sbb">
+                                                    <rect key="frame" x="20" y="40" width="335" height="160"/>
+                                                    <subviews>
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Номер карты" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oS8-TF-1hG" customClass="SHSPhoneTextField">
+                                                            <rect key="frame" x="20" y="21" width="295" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="AUg-ty-Vw1"/>
+                                                            </constraints>
+                                                            <nil key="textColor"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
+                                                        </textField>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.89962284479999999" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="oS8-TF-1hG" firstAttribute="top" secondItem="uk9-Y2-sbb" secondAttribute="top" constant="21" id="4xc-at-2q3"/>
+                                                        <constraint firstItem="oS8-TF-1hG" firstAttribute="leading" secondItem="uk9-Y2-sbb" secondAttribute="leading" constant="20" id="BAr-4Z-uOh"/>
+                                                        <constraint firstAttribute="trailing" secondItem="oS8-TF-1hG" secondAttribute="trailing" constant="20" id="bIE-JJ-ARW"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="7vK-hr-m1A" firstAttribute="top" secondItem="5JX-dd-G8I" secondAttribute="top" constant="15" id="0t4-bA-f5S"/>
+                                                <constraint firstAttribute="bottom" secondItem="uk9-Y2-sbb" secondAttribute="bottom" id="CA6-7s-J6G"/>
+                                                <constraint firstItem="7vK-hr-m1A" firstAttribute="leading" secondItem="5JX-dd-G8I" secondAttribute="leading" constant="20" id="IOe-Fo-mSd"/>
+                                                <constraint firstAttribute="trailing" secondItem="7vK-hr-m1A" secondAttribute="trailing" constant="20" id="NCB-1A-8WO"/>
+                                                <constraint firstItem="uk9-Y2-sbb" firstAttribute="top" secondItem="5JX-dd-G8I" secondAttribute="top" constant="40" id="UrG-t0-eU2"/>
+                                                <constraint firstAttribute="trailing" secondItem="uk9-Y2-sbb" secondAttribute="trailing" constant="20" id="bNC-1b-y2O"/>
+                                                <constraint firstItem="uk9-Y2-sbb" firstAttribute="leading" secondItem="5JX-dd-G8I" secondAttribute="leading" constant="20" id="wJR-Uo-Tuh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="fieldCardNumber" destination="oS8-TF-1hG" id="vl8-J0-qyd"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SubmitCell" rowHeight="176" id="G8x-Hd-P1k" customClass="SubmitCell">
+                                        <rect key="frame" x="0.0" y="428" width="375" height="176"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G8x-Hd-P1k" id="bhR-fY-b7z">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="176"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dz0-9g-iI1">
+                                                    <rect key="frame" x="243" y="20" width="110" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="110" id="aDe-bk-844"/>
+                                                    </constraints>
+                                                    <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" returnKeyType="done"/>
+                                                    <connections>
+                                                        <action selector="fieldAmountDidChange:" destination="G8x-Hd-P1k" eventType="editingChanged" id="NO7-p2-fEa"/>
+                                                    </connections>
+                                                </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Vc-dj-4HQ">
+                                                    <rect key="frame" x="20" y="144" width="335" height="40"/>
+                                                    <color key="backgroundColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="mJF-ru-W6g"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <state key="normal" title="ПЕРЕВЕСТИ">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="buttonSubmitUpInside:" destination="G8x-Hd-P1k" eventType="touchUpInside" id="tkN-vr-bvg"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Сумма перевода:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ed4-Lf-0NF">
+                                                    <rect key="frame" x="20" y="20" width="198" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QHt-pU-Tqs">
+                                                    <rect key="frame" x="243" y="58" width="110" height="30"/>
+                                                    <color key="backgroundColor" white="0.9547952586206897" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="110" id="hdv-nv-UQh"/>
+                                                        <constraint firstAttribute="height" constant="30" id="jB0-sv-hg9"/>
+                                                    </constraints>
+                                                    <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" returnKeyType="done"/>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Комиссия:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZWM-Ky-YlL">
+                                                    <rect key="frame" x="20" y="58" width="198" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HV3-8Y-I0M">
+                                                    <rect key="frame" x="243" y="96" width="110" height="30"/>
+                                                    <color key="backgroundColor" white="0.95479525860000003" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="110" id="TxS-xL-vIF"/>
+                                                        <constraint firstAttribute="height" constant="30" id="mRm-Vr-m6n"/>
+                                                    </constraints>
+                                                    <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" returnKeyType="done"/>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Итого с комиссией:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b94-Ge-v32">
+                                                    <rect key="frame" x="20" y="96" width="198" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="3Vc-dj-4HQ" secondAttribute="trailing" constant="20" id="37U-kj-Jg2"/>
+                                                <constraint firstItem="3Vc-dj-4HQ" firstAttribute="top" secondItem="bhR-fY-b7z" secondAttribute="top" constant="144" id="GrI-An-FO0"/>
+                                                <constraint firstAttribute="trailing" secondItem="HV3-8Y-I0M" secondAttribute="trailing" constant="22" id="PKf-KZ-JR9"/>
+                                                <constraint firstItem="HV3-8Y-I0M" firstAttribute="top" secondItem="bhR-fY-b7z" secondAttribute="top" constant="96" id="Soh-vb-yBL"/>
+                                                <constraint firstItem="Dz0-9g-iI1" firstAttribute="top" secondItem="bhR-fY-b7z" secondAttribute="top" constant="20" id="ZJv-vt-19y"/>
+                                                <constraint firstItem="3Vc-dj-4HQ" firstAttribute="leading" secondItem="bhR-fY-b7z" secondAttribute="leading" constant="20" id="f02-hg-svn"/>
+                                                <constraint firstAttribute="trailing" secondItem="QHt-pU-Tqs" secondAttribute="trailing" constant="22" id="glC-AM-9Zg"/>
+                                                <constraint firstItem="QHt-pU-Tqs" firstAttribute="top" secondItem="bhR-fY-b7z" secondAttribute="top" constant="58" id="mEl-m5-gNR"/>
+                                                <constraint firstAttribute="trailing" secondItem="Dz0-9g-iI1" secondAttribute="trailing" constant="22" id="tYh-7u-dgc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="fieldAmount" destination="Dz0-9g-iI1" id="Zqv-eA-UcV"/>
+                                            <outlet property="fieldComission" destination="QHt-pU-Tqs" id="RgB-qJ-VKE"/>
+                                            <outlet property="fieldTotal" destination="HV3-8Y-I0M" id="0vf-jk-8ek"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="BwX-rj-zoQ"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="SWe-lw-j6D"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="OrR-Ur-iRD" secondAttribute="trailing" id="FER-Nd-ZvJ"/>
+                            <constraint firstItem="OrR-Ur-iRD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Me8-dd-hE3"/>
+                            <constraint firstItem="OrR-Ur-iRD" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="md2-gk-GNj"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="OrR-Ur-iRD" secondAttribute="bottom" id="oeh-A9-ftz"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="1bG-mR-TFv" appends="YES" id="Qb4-lG-HIh"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="Перевод с карты на карту" id="z1k-Uz-G7H"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="1bG-mR-TFv">
+                    <connections>
+                        <action selector="gestureRecognizerAction:" destination="BYZ-38-t0r" id="FDy-fy-tcG"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="480.80000000000001" y="115.59220389805098"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xrx-W8-wBM">
+            <objects>
+                <navigationController id="5JV-wZ-H7W" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="xXC-Ft-jxj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="8KZ-Ti-fXE">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="H4y-VP-Myj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pwt-eQ-DAw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-249" y="117"/>
+        </scene>
+    </scenes>
+</document>
