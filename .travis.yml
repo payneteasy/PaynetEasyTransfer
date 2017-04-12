@@ -5,7 +5,7 @@ script:
   - open -b com.apple.iphonesimulator
   - set -o pipefail && env NSUnbufferedIO=YES
     xcodebuild test
-    -project PaynetEasyTransfer.xcodeproj
+    -workspace PaynetEasyTransfer.xcworkspace
     -scheme TransferAPI
     -sdk iphonesimulator
     -destination "platform=iOS Simulator,name=iPhone 6s" | xcpretty
