@@ -6,19 +6,39 @@ PaynetEasyTransfer SDK provides money transfer between cards Visa/MasterCard in 
 
 Add to your Podfile
 ```
-pod "PaynetEasyTransfer"
+pod "PaynetEasyTransfer", :git => 'git://github.com/payneteasy/PaynetEasyTransfer.git'
 ```
 
 ## Sample Code
 
-### Create ans setup TransferAPI instance
+### Import PaynetEasyTransferAPI module
 
 ```obj-c
-TransferAPI *transferApi = [[TransferAPI alloc] init];
-transferApi.paynetURL = paynet_server_url;
-transferApi.merchantAuthURL = merchant_auth_server_url;
-transferApi.merchantTransferRateURL = merchant_rate_server_url;
-transferApi.merchantTransferInitURL = merchant_init_server_url;
+#import "PaynetEasyTransferAPI.h"
+```
+
+### Create and setup PaynetEasyTransferAPI instance
+
+```obj-c
+PaynetEasyTransferAPI *transferApi = [[PaynetEasyTransferAPI alloc] init];
+transferApi.paynetURL = [NSURL URLWithString:kPaynetAddress];
+transferApi.merchantAuthURL = [NSURL URLWithString:kMerchantAuthAddress];
+transferApi.merchantTransferRateURL = [NSURL URLWithString:kMerchantTransferRateAddress];
+transferApi.merchantTransferInitURL = [NSURL URLWithString:kMerchantTransferInitAddress];
+```
+
+### Implement models classes
+Examples implementation are in a folder Models.
+```obj-c
+@interface Card : NSObject <CardProtocol>
+
+@property (nonatomic, strong) NSString *number;
+@property (nonatomic, strong) NSString *securityCode;
+@property (nonatomic, strong) NSNumber *expiryMonth;
+@property (nonatomic, strong) NSNumber *expiryYear;
+@property (nonatomic, strong) NSString *cardHolder;
+
+@end
 ```
 
 ### Get transfer rate (optional)
@@ -40,16 +60,19 @@ Card *sourceCard = [[Card alloc] init];
 sourceCard.number = @"4444555566661111";
 sourceCard.expiryMonth = @1;
 sourceCard.expiryYear = @2020;
-sourceCard.securityCode = @"123";
+sourceCard.securityCode = @"111";
 sourceCard.cardHolder = @"TEST";
 
-// destination card    
+// destination card
 Card *destCard = [[Card alloc] init];
 destCard.number = @"5555666644441111";
 
 // consumer info
 Consumer *consumer = [[Consumer alloc] init];
-consumer.deviceNumber = your_device_number;
+consumer.deviceNumber = @"consumer_mobile_device_number";
+
+double amount = 200.0;
+NSString *currency = @"RUB";
 
 // get accessToken from Merchant Auth Server
 Session *session = [[Session alloc] init];
@@ -61,7 +84,7 @@ Session *session = [[Session alloc] init];
         transaction.toBin = [destCard.number substringToIndex:6];
         transaction.amountCentis = @(round(amount * 100));
         transaction.currency = currency;
-         
+        
         // initiate transfer request
         [transferApi initiateTransfer:session transaction:transaction consumer:consumer completeBlock:^(BOOL result, NSError *error) {
             if (result) {
@@ -72,22 +95,21 @@ Session *session = [[Session alloc] init];
                                  destCard:destCard
                                  consumer:consumer
                             redirectBlock:^(NSString *redirectUrl) {
-                                    // open redirectUrl in webView
-                                }
-                                continueBlock:^(BOOL *stop) {
-                                    // set YES if you'd like to break the transaction
-                                    *stop = YES;
-                                }
-                                completeBlock:^(BOOL result, NSError *error) {
-                                    NSLog(@"TransferApi.transferMoney result: %@.", result ? @"approved" : @"declined");
-                                }];
-                } else {
-                    NSLog(@"TransferApi.initiateTransfer error: %@", error);
-                }
-            }];
-        } else {
-            NSLog(@"TransferApi.requestAccessToken error: %@", error);
-        }
-    }];
-}
+                                // open redirectUrl in webView
+                            }
+                            continueBlock:^(BOOL *stop) {
+                                // set YES if you'd like to break the transaction
+                                // *stop = YES;
+                            }
+                            completeBlock:^(BOOL result, NSError *error) {
+                                NSLog(@"PaynetEasyTransferAPI.transferMoney result: %@.", result ? @"approved" : @"declined");
+                            }];
+            } else {
+                NSLog(@"PaynetEasyTransferAPI.initiateTransfer error: %@", error);
+            }
+        }];
+    } else {
+        NSLog(@"PaynetEasyTransferAPI.requestAccessToken error: %@", error);
+    }
+}];
 ```

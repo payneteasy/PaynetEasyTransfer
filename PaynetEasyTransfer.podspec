@@ -10,6 +10,14 @@ Pod::Spec.new do |s|
   s.requires_arc          = true
   s.platform              = :ios
   s.ios.deployment_target = '8.0'
-  s.public_header_files   = "PaynetEasyTransfer/*.h", "PaynetEasyTransfer/**/*.h"
-  s.source_files          = "PaynetEasyTransfer/*.{h,m}", "PaynetEasyTransfer/**/*.{h,m}"
+  s.public_header_files   = 'PaynetEasyTransfer/TransferAPI/*.h'
+  s.source_files          = 'PaynetEasyTransfer/TransferAPI/*.{h,m}'
+  s.subspec 'Protocols' do |ss|
+    ss.public_header_files = 'PaynetEasyTransfer/Protocols/*.h'
+    ss.source_files = 'PaynetEasyTransfer/Protocols/*.{h,m}'
+  end
+  s.subspec 'Categories' do |ss|
+    ss.public_header_files = 'PaynetEasyTransfer/Categories/*.h'
+    ss.source_files = 'PaynetEasyTransfer/Categories/*.{h,m}'
+  end
 end
