@@ -12,10 +12,10 @@
 
 @property (nonatomic, strong) NSString *fromBin;
 @property (nonatomic, strong) NSString *toBin;
-@property (nonatomic) NSDecimalNumber *interest;
-@property (nonatomic) NSDecimalNumber *rateMin;
-@property (nonatomic) NSDecimalNumber *rateMax;
-@property (nonatomic) NSDecimalNumber *limitMin;
-@property (nonatomic) NSDecimalNumber *limitMax;
+@property (nonatomic, strong) NSDecimalNumber *interest;
+@property (nonatomic, strong) NSDecimalNumber *rateMin;
+@property (nonatomic, strong) NSDecimalNumber *rateMax;
+@property (nonatomic, strong) NSDecimalNumber *limitMin;
+@property (nonatomic, strong) NSDecimalNumber *limitMax;
 
 @end

@@ -17,6 +17,7 @@
 @property (nonatomic) NSNumber *amountCentis;
 @property (nonatomic) NSDecimalNumber *comission;
 @property (nonatomic) NSString *currency;
+@property (nonatomic) NSDate *datetime;
 @property (nonatomic) NSString *token;
 
 @end

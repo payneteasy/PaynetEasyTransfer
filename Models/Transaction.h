@@ -14,9 +14,10 @@
 @property (nonatomic, strong) NSString *invoiceId;
 @property (nonatomic, strong) NSString *fromBin;
 @property (nonatomic, strong) NSString *toBin;
-@property (nonatomic) NSNumber *amountCentis;
-@property (nonatomic) NSDecimalNumber *comission;
+@property (nonatomic, strong) NSNumber *amountCentis;
+@property (nonatomic, strong) NSDecimalNumber *comission;
 @property (nonatomic, strong) NSString *currency;
+@property (nonatomic, strong) NSDate *datetime;
 @property (nonatomic, strong) NSString *token;
 
 @end
