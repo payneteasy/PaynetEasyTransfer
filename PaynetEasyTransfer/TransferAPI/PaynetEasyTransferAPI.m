@@ -262,7 +262,9 @@
                                                      if (!error)
                                                          result = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
                                                  }
-                                                 completion(result, error);
+                                                 dispatch_sync(dispatch_get_main_queue(), ^{
+                                                     completion(result, error);
+                                                 });
                                              }];
     [task resume];
 }
