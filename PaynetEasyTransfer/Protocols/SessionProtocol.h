@@ -11,6 +11,7 @@
 @protocol SessionProtocol
 
 @property (nonatomic) NSString *accessToken;
+@property (nonatomic) NSString *token;
 @property (nonatomic) NSString *nonce;
 @property (nonatomic) NSString *signature;
 

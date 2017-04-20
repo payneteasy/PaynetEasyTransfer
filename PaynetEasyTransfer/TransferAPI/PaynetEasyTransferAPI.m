@@ -137,7 +137,7 @@
     
     [self postWithUrl:url body:[body clearEmptyChilds] completion:^(id result, NSError *error) {
         if (result && !error) {
-            transaction.token = [result get_StringForPath:@"session.token"];
+            session.token = [result get_StringForPath:@"session.token"];
             [self checkTransferStatus:transaction
                               session:session
                         redirectBlock:redirectBlock
@@ -157,7 +157,7 @@
     // body
     NSMutableDictionary *body = [NSMutableDictionary dictionary];
     [body set_Object:session.accessToken forPath:@"session.accessToken"];
-    [body set_Object:transaction.token   forPath:@"session.token"];
+    [body set_Object:session.token       forPath:@"session.token"];
     
     // url
     NSURL *url = _paynetURL;
@@ -176,16 +176,21 @@
                 // processing
                 if ([state isEqualToString:transferState_PROCESSING]) {
                     needRepeat = YES;
-                    // approved
+                // approved
                 } else if ([state isEqualToString:transferState_APPROVED]) {
+                    transaction.orderId = [result get_StringForPath:@"orderId"];
+                    transaction.orderDate = [self parseDateTimeFromString:[result get_StringForPath:@"transaction.orderCreatedDate"]];
+                    transaction.transactionDate = [self parseDateTimeFromString:[result get_StringForPath:@"transaction.transactionCreatedDate"]];
+                    transaction.transactionAmountCentis = @([result get_IntegerForPath:@"transaction.amountCentis"]);
+                    transaction.transactionComission = [NSDecimalNumber decimalNumberWithString:[result get_StringForPath:@"transaction.comission"]];
                     completeBlock(YES, nil);
-                    // redirect
+                // redirect
                 } else if ([state isEqualToString:transferState_REDIRECT_REQUEST]) {
                     NSString *redirectUrl = [result get_StringForPath:@"redirectUrl"];
                     if (redirectBlock)
                         redirectBlock(redirectUrl);
                     needRepeat = YES;
-                    // decline
+                // decline
                 } else {
                     completeBlock(NO, nil);
                 }
@@ -284,6 +289,12 @@
         }
     }
     return nil;
+}
+
+- (NSDate *)parseDateTimeFromString:(NSString *)string {
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss.SSSZ"];
+    return [dateFormat dateFromString:string];
 }
 
 @end

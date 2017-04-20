@@ -11,6 +11,7 @@
 @interface Session : NSObject <SessionProtocol>
 
 @property (nonatomic, strong) NSString *accessToken;
+@property (nonatomic, strong) NSString *token;
 @property (nonatomic, strong) NSString *nonce;
 @property (nonatomic, strong) NSString *signature;
 

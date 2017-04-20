@@ -17,7 +17,11 @@
 @property (nonatomic) NSNumber *amountCentis;
 @property (nonatomic) NSDecimalNumber *comission;
 @property (nonatomic) NSString *currency;
-@property (nonatomic) NSDate *datetime;
-@property (nonatomic) NSString *token;
+
+@property (nonatomic) NSString *orderId;
+@property (nonatomic) NSDate *orderDate;
+@property (nonatomic) NSDate *transactionDate;
+@property (nonatomic) NSNumber *transactionAmountCentis;
+@property (nonatomic) NSDecimalNumber *transactionComission;
 
 @end
