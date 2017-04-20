@@ -182,7 +182,7 @@
                     transaction.orderDate = [self parseDateTimeFromString:[result get_StringForPath:@"transaction.orderCreatedDate"]];
                     transaction.transactionDate = [self parseDateTimeFromString:[result get_StringForPath:@"transaction.transactionCreatedDate"]];
                     transaction.transactionAmountCentis = @([result get_IntegerForPath:@"transaction.amountCentis"]);
-                    transaction.transactionComission = [NSDecimalNumber decimalNumberWithString:[result get_StringForPath:@"transaction.comission"]];
+                    transaction.transactionComission = [[NSDecimalNumber alloc] initWithDouble:[result get_DoubleForPath:@"transaction.comission"]];
                     completeBlock(YES, nil);
                 // redirect
                 } else if ([state isEqualToString:transferState_REDIRECT_REQUEST]) {
