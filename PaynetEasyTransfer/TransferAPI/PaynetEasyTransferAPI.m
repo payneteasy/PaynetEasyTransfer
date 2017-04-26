@@ -192,6 +192,11 @@
                     needRepeat = YES;
                 // decline
                 } else {
+                    transaction.orderId = [result get_StringForPath:@"orderId"];
+                    transaction.orderDate = [self parseDateTimeFromString:[result get_StringForPath:@"transaction.orderCreatedDate"]];
+                    transaction.transactionDate = [self parseDateTimeFromString:[result get_StringForPath:@"transaction.transactionCreatedDate"]];
+                    transaction.transactionAmountCentis = @([result get_IntegerForPath:@"transaction.amountCentis"]);
+                    transaction.transactionComission = [[NSDecimalNumber alloc] initWithDouble:[result get_DoubleForPath:@"transaction.comission"]];
                     completeBlock(NO, nil);
                 }
                 // repeat
