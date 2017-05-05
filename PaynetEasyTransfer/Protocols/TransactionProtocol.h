@@ -22,6 +22,6 @@
 @property (nonatomic) NSDate *orderDate;
 @property (nonatomic) NSDate *transactionDate;
 @property (nonatomic) NSNumber *transactionAmountCentis;
-@property (nonatomic) NSNumber *transactionСommissionCentis;
+@property (nonatomic) NSNumber *transactionCommissionCentis;
 
 @end
