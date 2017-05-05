@@ -15,13 +15,13 @@
 @property (nonatomic) NSString *fromBin;
 @property (nonatomic) NSString *toBin;
 @property (nonatomic) NSNumber *amountCentis;
-@property (nonatomic) NSDecimalNumber *comission;
+@property (nonatomic) NSNumber *сommissionCentis;
 @property (nonatomic) NSString *currency;
 
 @property (nonatomic) NSString *orderId;
 @property (nonatomic) NSDate *orderDate;
 @property (nonatomic) NSDate *transactionDate;
 @property (nonatomic) NSNumber *transactionAmountCentis;
-@property (nonatomic) NSDecimalNumber *transactionComission;
+@property (nonatomic) NSNumber *transactionСommissionCentis;
 
 @end
