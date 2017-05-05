@@ -15,7 +15,7 @@
 @property (nonatomic) NSString *fromBin;
 @property (nonatomic) NSString *toBin;
 @property (nonatomic) NSNumber *amountCentis;
-@property (nonatomic) NSNumber *сommissionCentis;
+@property (nonatomic) NSNumber *commissionCentis;
 @property (nonatomic) NSString *currency;
 
 @property (nonatomic) NSString *orderId;
