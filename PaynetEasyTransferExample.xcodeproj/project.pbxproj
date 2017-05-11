@@ -31,6 +31,7 @@
 		A5C21CFB1E93C98300AB288F /* TestServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C21CFA1E93C98300AB288F /* TestServer.m */; };
 		A5C21D011E94E88A00AB288F /* TestMerchantServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C21D001E94E88A00AB288F /* TestMerchantServer.m */; };
 		A5C21E0C1E9CDC8500AB288F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5C21E0A1E9CDC8500AB288F /* LaunchScreen.storyboard */; };
+		A5CD46451EC32141004AF3E5 /* Receipt.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CD46441EC32141004AF3E5 /* Receipt.m */; };
 		D899F492F948AC346B086B60 /* libPods-PaynetEasyTransferExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E3247A830C3C1E54C2DE071 /* libPods-PaynetEasyTransferExample.a */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +83,8 @@
 		A5C21CFF1E94E88A00AB288F /* TestMerchantServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMerchantServer.h; sourceTree = "<group>"; };
 		A5C21D001E94E88A00AB288F /* TestMerchantServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestMerchantServer.m; sourceTree = "<group>"; };
 		A5C21E0B1E9CDC8500AB288F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A5CD46431EC32141004AF3E5 /* Receipt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Receipt.h; sourceTree = "<group>"; };
+		A5CD46441EC32141004AF3E5 /* Receipt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Receipt.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +175,8 @@
 				A52A878E1E8A6E52008DD9FD /* Session.m */,
 				A52A878D1E8A6E52008DD9FD /* Transaction.h */,
 				A52A87911E8A6E52008DD9FD /* Transaction.m */,
+				A5CD46431EC32141004AF3E5 /* Receipt.h */,
+				A5CD46441EC32141004AF3E5 /* Receipt.m */,
 			);
 			path = Models;
 			sourceTree = SOURCE_ROOT;
@@ -378,6 +383,7 @@
 				A508EB0A1E81634C00D05615 /* AppDelegate.m in Sources */,
 				A52A879F1E8A8ACB008DD9FD /* SourceCardCell.m in Sources */,
 				A50F90DE1E9AF51500C35165 /* NSDictionary+Values.m in Sources */,
+				A5CD46451EC32141004AF3E5 /* Receipt.m in Sources */,
 				A5C21CF81E93C86100AB288F /* TestPaynetServer.m in Sources */,
 				A508EB071E81634C00D05615 /* main.m in Sources */,
 				A52A887F1E8D0732008DD9FD /* Rate.m in Sources */,

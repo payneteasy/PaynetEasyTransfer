@@ -14,6 +14,7 @@
 #import "Card.h"
 #import "Session.h"
 #import "Transaction.h"
+#import "Receipt.h"
 
 @interface PaynetEasyTransferTests : XCTestCase
 
@@ -69,25 +70,31 @@
     [transferApi requestAccessToken:session completeBlock:^(BOOL result, NSError *error) {
         if (result) {
             Transaction *transaction = [[Transaction alloc] init];
-            transaction.fromBin = [sourceCard.number substringToIndex:6];
-            transaction.toBin = [destCard.number substringToIndex:6];
             transaction.amountCentis = @(round(amount * 100));
             transaction.currency = currency;
             
+            Receipt *receipt = [[Receipt alloc] init];
+            
             // initiate transfer request
-            [transferApi initiateTransfer:session transaction:transaction consumer:consumer completeBlock:^(BOOL result, NSError *error) {
+            [transferApi initiateTransfer:session
+                              transaction:transaction
+                                 consumer:consumer
+                               sourceCard:sourceCard
+                                 destCard:destCard
+                            completeBlock:^(BOOL result, NSError *error) {
                 if (result) {
                     // transfer money
-                    [transferApi tranferMoney:transaction
-                                      session:session
+                    [transferApi tranferMoney:session
+                                  transaction:transaction
+                                     consumer:consumer
                                    sourceCard:sourceCard
                                      destCard:destCard
-                                     consumer:consumer
+                                      receipt:receipt
                                 redirectBlock:nil
                                 continueBlock:nil
                                 completeBlock:^(BOOL result, NSError *error) {
                                     NSLog(@"PaynetEasyTransferAPI.transferMoney result: %@.", result ? @"approved" : @"declined");
-                                    XCTAssert(result);
+                                    XCTAssert(result && receipt.status == ReceiptStatusApproved);
                                     [expectation fulfill];
                                 }];
                 } else {

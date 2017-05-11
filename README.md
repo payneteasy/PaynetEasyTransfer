@@ -61,7 +61,6 @@ sourceCard.number = @"4444555566661111";
 sourceCard.expiryMonth = @1;
 sourceCard.expiryYear = @2020;
 sourceCard.securityCode = @"111";
-sourceCard.cardHolder = @"TEST";
 
 // destination card
 Card *destCard = [[Card alloc] init];
@@ -80,20 +79,26 @@ Session *session = [[Session alloc] init];
     if (result) {
         // set transaction info
         Transaction *transaction = [[Transaction alloc] init];
-        transaction.fromBin = [sourceCard.number substringToIndex:6];
-        transaction.toBin = [destCard.number substringToIndex:6];
         transaction.amountCentis = @(round(amount * 100));
         transaction.currency = currency;
+
+        Receipt *receipt = [[Receipt alloc] init];
         
         // initiate transfer request
-        [transferApi initiateTransfer:session transaction:transaction consumer:consumer completeBlock:^(BOOL result, NSError *error) {
+        [transferApi initiateTransfer:session
+                          transaction:transaction
+                             consumer:consumer
+                           sourceCard:sourceCard
+                             destCard:destCard
+                        completeBlock:^(BOOL result, NSError *error) {
             if (result) {
                 // transfer money
-                [transferApi tranferMoney:transaction
-                                  session:session
+                [transferApi tranferMoney:session
+                              transaction:transaction
+                                 consumer:consumer
                                sourceCard:sourceCard
                                  destCard:destCard
-                                 consumer:consumer
+                                  receipt:receipt
                             redirectBlock:^(NSString *redirectUrl) {
                                 // open redirectUrl in webView
                             }

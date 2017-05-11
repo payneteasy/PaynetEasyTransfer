@@ -11,6 +11,7 @@
 #import "RateProtocol.h"
 #import "SessionProtocol.h"
 #import "TransactionProtocol.h"
+#import "ReceiptProtocol.h"
 
 @interface PaynetEasyTransferAPI : NSObject
 
@@ -33,15 +34,18 @@
 - (void)initiateTransfer:(id<SessionProtocol>)session
              transaction:(id<TransactionProtocol>)transaction
                 consumer:(id<ConsumerProtocol>)consumer
+              sourceCard:(id<CardProtocol>)sourceCard
+                destCard:(id<CardProtocol>)destCard
            completeBlock:(void(^)(BOOL result, NSError *error))completeBlock;
 
 // paynet methods
 
-- (void)tranferMoney:(id<TransactionProtocol>)transaction
-             session:(id<SessionProtocol>)session
+- (void)tranferMoney:(id<SessionProtocol>)session
+         transaction:(id<TransactionProtocol>)transaction
+            consumer:(id<ConsumerProtocol>)consumer
           sourceCard:(id<CardProtocol>)sourceCard
             destCard:(id<CardProtocol>)destCard
-            consumer:(id<ConsumerProtocol>)consumer
+             receipt:(id<ReceiptProtocol>)receipt
        redirectBlock:(void(^)(NSString *redirectUrl))redirectBlock
        continueBlock:(void(^)(BOOL *stop))continueBlock
        completeBlock:(void(^)(BOOL result, NSError *error))completeBlock;

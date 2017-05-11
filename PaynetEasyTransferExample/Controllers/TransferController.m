@@ -21,6 +21,7 @@
 #import "Card.h"
 #import "Rate.h"
 #import "Consumer.h"
+#import "Receipt.h"
 
 @interface TransferController () <UITableViewDataSource, UITableViewDelegate, SubmitCellDelegate, WebViewControllerDelegate>
 
@@ -94,20 +95,26 @@
     [transferApi requestAccessToken:session completeBlock:^(BOOL result, NSError *error) {
         if (result) {
             Transaction *transaction = [[Transaction alloc] init];
-            transaction.fromBin = [sourceCard.number substringToIndex:6];
-            transaction.toBin = [destCard.number substringToIndex:6];
             transaction.amountCentis = @(round(amount * 100));
             transaction.currency = currency;
             
+            Receipt *receipt = [[Receipt alloc] init];
+            
             // initiate transfer request
-            [transferApi initiateTransfer:session transaction:transaction consumer:consumer completeBlock:^(BOOL result, NSError *error) {
+            [transferApi initiateTransfer:session
+                              transaction:transaction
+                                 consumer:consumer
+                               sourceCard:sourceCard
+                                 destCard:destCard
+                            completeBlock:^(BOOL result, NSError *error) {
                 if (result) {
                     // transfer money
-                    [transferApi tranferMoney:transaction
-                                      session:session
+                    [transferApi tranferMoney:session
+                                  transaction:transaction
+                                     consumer:consumer
                                    sourceCard:sourceCard
                                      destCard:destCard
-                                     consumer:consumer
+                                      receipt:receipt
                                 redirectBlock:^(NSString *redirectUrl) {
                                     if (![_redirectUrl isEqualToString:redirectUrl]) {
                                         _redirectUrl = redirectUrl;

@@ -10,8 +10,6 @@
 
 @protocol RateProtocol
 
-@property (nonatomic) NSString *fromBin;
-@property (nonatomic) NSString *toBin;
 @property (nonatomic) NSDecimalNumber *interest;
 @property (nonatomic) NSDecimalNumber *rateMin;
 @property (nonatomic) NSDecimalNumber *rateMax;

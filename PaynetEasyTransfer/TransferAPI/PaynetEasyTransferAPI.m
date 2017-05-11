@@ -77,14 +77,18 @@
 - (void)initiateTransfer:(id<SessionProtocol>)session
              transaction:(id<TransactionProtocol>)transaction
                 consumer:(id<ConsumerProtocol>)consumer
+              sourceCard:(id<CardProtocol>)sourceCard
+                destCard:(id<CardProtocol>)destCard
            completeBlock:(void(^)(BOOL result, NSError *error))completeBlock {
 
     // body
     NSMutableDictionary *body = [NSMutableDictionary dictionary];
     [body set_Object:consumer.deviceNumber       forPath:@"consumer.device.serialNumber"];
     [body set_Object:session.accessToken         forPath:@"session.accessToken"];
-    [body set_Object:transaction.fromBin         forPath:@"transaction.fromBin"];
-    [body set_Object:transaction.toBin           forPath:@"transaction.toBin"];
+    if (sourceCard.number.length > 5)
+        [body set_Object:[sourceCard.number substringToIndex:6] forPath:@"transaction.fromBin"];
+    if (destCard.number.length > 5)
+        [body set_Object:[destCard.number substringToIndex:6] forPath:@"transaction.toBin"];
     [body set_Object:transaction.amountCentis    forPath:@"transaction.amountCentis"];
     [body set_Object:transaction.currency        forPath:@"transaction.currency"];
     
@@ -102,11 +106,12 @@
 
 #pragma mark - paynet methods
 
-- (void)tranferMoney:(id<TransactionProtocol>)transaction
-             session:(id<SessionProtocol>)session
+- (void)tranferMoney:(id<SessionProtocol>)session
+         transaction:(id<TransactionProtocol>)transaction
+            consumer:(id<ConsumerProtocol>)consumer
           sourceCard:(id<CardProtocol>)sourceCard
             destCard:(id<CardProtocol>)destCard
-            consumer:(id<ConsumerProtocol>)consumer
+             receipt:(id<ReceiptProtocol>)receipt
        redirectBlock:(void(^)(NSString *redirectUrl))redirectBlock
        continueBlock:(void(^)(BOOL *stop))continueBlock
        completeBlock:(void(^)(BOOL result, NSError *error))completeBlock {
@@ -138,8 +143,14 @@
     [self postWithUrl:url body:[body clearEmptyChilds] completion:^(id result, NSError *error) {
         if (result && !error) {
             session.token = [result get_StringForPath:@"session.token"];
-            [self checkTransferStatus:transaction
-                              session:session
+            if (receipt) {
+                receipt.sourceCard = sourceCard.number;
+                receipt.destCard = destCard.number;
+                receipt.status = ReceiptStatusUnknown;
+            }
+            [self checkTransferStatus:session
+                          transaction:transaction
+                              receipt:receipt
                         redirectBlock:redirectBlock
                         continueBlock:continueBlock
                         completeBlock:completeBlock];
@@ -148,8 +159,9 @@
     }];
 }
 
-- (void)checkTransferStatus:(id<TransactionProtocol>)transaction
-                    session:(id<SessionProtocol>)session
+- (void)checkTransferStatus:(id<SessionProtocol>)session
+                transaction:(id<TransactionProtocol>)transaction
+                    receipt:(id<ReceiptProtocol>)receipt
               redirectBlock:(void(^)(NSString *redirectUrl))redirectBlock
               continueBlock:(void(^)(BOOL *stop))continueBlock
               completeBlock:(void(^)(BOOL result, NSError *error))completeBlock {
@@ -178,11 +190,10 @@
                     needRepeat = YES;
                 // approved
                 } else if ([state isEqualToString:transferState_APPROVED]) {
-                    transaction.orderId = [result get_StringForPath:@"orderId"];
-                    transaction.orderDate = [self parseDateTimeFromString:[result get_StringForPath:@"transaction.orderCreatedDate"]];
-                    transaction.transactionDate = [self parseDateTimeFromString:[result get_StringForPath:@"transaction.transactionCreatedDate"]];
-                    transaction.transactionAmountCentis = @([result get_IntegerForPath:@"transaction.amountCentis"]);
-                    transaction.transactionCommissionCentis = @([result get_IntegerForPath:@"transaction.commissionCentis"]);
+                    if (receipt) {
+                        [self parseReceipt:receipt fromDict:result];
+                        receipt.status = ReceiptStatusApproved;
+                    }
                     completeBlock(YES, nil);
                 // redirect
                 } else if ([state isEqualToString:transferState_REDIRECT_REQUEST]) {
@@ -192,11 +203,10 @@
                     needRepeat = YES;
                 // decline
                 } else {
-                    transaction.orderId = [result get_StringForPath:@"orderId"];
-                    transaction.orderDate = [self parseDateTimeFromString:[result get_StringForPath:@"transaction.orderCreatedDate"]];
-                    transaction.transactionDate = [self parseDateTimeFromString:[result get_StringForPath:@"transaction.transactionCreatedDate"]];
-                    transaction.transactionAmountCentis = @([result get_IntegerForPath:@"transaction.amountCentis"]);
-                    transaction.transactionCommissionCentis = [[NSDecimalNumber alloc] initWithDouble:[result get_DoubleForPath:@"transaction.commissionCentis"]];
+                    if (receipt) {
+                        [self parseReceipt:receipt fromDict:result];
+                        receipt.status = ReceiptStatusDeclined;
+                    }
                     completeBlock(NO, nil);
                 }
                 // repeat
@@ -204,16 +214,20 @@
                     if (!stop) {
                         dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, _updateInterval * NSEC_PER_SEC);
                         dispatch_after(time, dispatch_get_main_queue(), ^{
-                            [self checkTransferStatus:transaction
-                                              session:session
+                            [self checkTransferStatus:session
+                                          transaction:transaction
+                                              receipt:receipt
                                         redirectBlock:redirectBlock
                                         continueBlock:continueBlock
                                         completeBlock:completeBlock];
                         });
                     }
                 }
-            } else
+            } else {
+                if (receipt)
+                    receipt.status = ReceiptStatusCancelled;
                 completeBlock(NO, nil);
+            }
         } else
             completeBlock(NO, error);
     }];
@@ -294,6 +308,15 @@
         }
     }
     return nil;
+}
+
+- (void)parseReceipt:(id<ReceiptProtocol>)receipt fromDict:(NSDictionary *)dict {
+    receipt.orderId = [dict get_StringForPath:@"orderId"];
+    receipt.date = [self parseDateTimeFromString:[dict get_StringForPath:@"transaction.transactionCreatedDate"]];
+    receipt.amountCentis = @([dict get_IntegerForPath:@"transaction.amountCentis"]);
+    receipt.commissionCentis = @([dict get_IntegerForPath:@"transaction.commissionCentis"]);
+    receipt.currency = [dict get_StringForPath:@"transaction.currency"];
+    receipt.comment = nil;
 }
 
 - (NSDate *)parseDateTimeFromString:(NSString *)string {

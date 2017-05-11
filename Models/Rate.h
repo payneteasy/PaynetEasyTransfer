@@ -10,8 +10,6 @@
 
 @interface Rate : NSObject <RateProtocol>
 
-@property (nonatomic, strong) NSString *fromBin;
-@property (nonatomic, strong) NSString *toBin;
 @property (nonatomic, strong) NSDecimalNumber *interest;
 @property (nonatomic, strong) NSDecimalNumber *rateMin;
 @property (nonatomic, strong) NSDecimalNumber *rateMax;

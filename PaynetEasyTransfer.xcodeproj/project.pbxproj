@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		08904E5AA65C78D879F2318B /* libPods-PaynetEasyTransferTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0FC9B209A04B8F5D0FD8C93 /* libPods-PaynetEasyTransferTests.a */; };
+		A56A05DF1EC3143900397663 /* ReceiptProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A56A05DE1EC3143900397663 /* ReceiptProtocol.h */; };
 		A5C21DC31E9BE2BA00AB288F /* PaynetEasyTransfer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5C21DB91E9BE2BA00AB288F /* PaynetEasyTransfer.framework */; };
 		A5C21DC81E9BE2BA00AB288F /* PaynetEasyTransferTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C21DC71E9BE2BA00AB288F /* PaynetEasyTransferTests.m */; };
 		A5C21DCA1E9BE2BA00AB288F /* PaynetEasyTransfer.h in Headers */ = {isa = PBXBuildFile; fileRef = A5C21DBC1E9BE2BA00AB288F /* PaynetEasyTransfer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -32,6 +33,7 @@
 		A5C21E071E9CCA6000AB288F /* Rate.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C21E001E9CCA6000AB288F /* Rate.m */; };
 		A5C21E081E9CCA6000AB288F /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C21E021E9CCA6000AB288F /* Session.m */; };
 		A5C21E091E9CCA6000AB288F /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C21E041E9CCA6000AB288F /* Transaction.m */; };
+		A5CD46481EC326B2004AF3E5 /* Receipt.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CD46471EC326B2004AF3E5 /* Receipt.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,7 @@
 		3C57A929467C45E181FDC759 /* Pods-PaynetEasyTransferTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaynetEasyTransferTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PaynetEasyTransferTests/Pods-PaynetEasyTransferTests.debug.xcconfig"; sourceTree = "<group>"; };
 		608EFE0080C5EEE24BB45065 /* libPods-PaynetEasyTransfer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PaynetEasyTransfer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95DCB961527B0FDFC8FC3E6C /* Pods-PaynetEasyTransferTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaynetEasyTransferTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PaynetEasyTransferTests/Pods-PaynetEasyTransferTests.release.xcconfig"; sourceTree = "<group>"; };
+		A56A05DE1EC3143900397663 /* ReceiptProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiptProtocol.h; sourceTree = "<group>"; };
 		A5C21DB91E9BE2BA00AB288F /* PaynetEasyTransfer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PaynetEasyTransfer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5C21DBC1E9BE2BA00AB288F /* PaynetEasyTransfer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaynetEasyTransfer.h; sourceTree = "<group>"; };
 		A5C21DBD1E9BE2BA00AB288F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,6 +86,8 @@
 		A5C21E021E9CCA6000AB288F /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
 		A5C21E031E9CCA6000AB288F /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
 		A5C21E041E9CCA6000AB288F /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
+		A5CD46461EC326B2004AF3E5 /* Receipt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Receipt.h; sourceTree = "<group>"; };
+		A5CD46471EC326B2004AF3E5 /* Receipt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Receipt.m; sourceTree = "<group>"; };
 		C0FC9B209A04B8F5D0FD8C93 /* libPods-PaynetEasyTransferTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PaynetEasyTransferTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -166,6 +171,7 @@
 				A5C21DD61E9BE36300AB288F /* RateProtocol.h */,
 				A5C21DD71E9BE36300AB288F /* SessionProtocol.h */,
 				A5C21DD81E9BE36300AB288F /* TransactionProtocol.h */,
+				A56A05DE1EC3143900397663 /* ReceiptProtocol.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -218,6 +224,8 @@
 				A5C21E021E9CCA6000AB288F /* Session.m */,
 				A5C21E031E9CCA6000AB288F /* Transaction.h */,
 				A5C21E041E9CCA6000AB288F /* Transaction.m */,
+				A5CD46461EC326B2004AF3E5 /* Receipt.h */,
+				A5CD46471EC326B2004AF3E5 /* Receipt.m */,
 			);
 			path = Models;
 			sourceTree = SOURCE_ROOT;
@@ -243,6 +251,7 @@
 				A5C21DE61E9BE36300AB288F /* SessionProtocol.h in Headers */,
 				A5C21DE81E9BE36300AB288F /* NSDictionary+Utils.h in Headers */,
 				A5C21DE51E9BE36300AB288F /* RateProtocol.h in Headers */,
+				A56A05DF1EC3143900397663 /* ReceiptProtocol.h in Headers */,
 				A5C21DEE1E9BE36300AB288F /* PaynetEasyTransferAPI.h in Headers */,
 				A5C21DEA1E9BE36300AB288F /* NSDictionary+Values.h in Headers */,
 				A5C21DCA1E9BE2BA00AB288F /* PaynetEasyTransfer.h in Headers */,
@@ -417,6 +426,7 @@
 				A5C21E071E9CCA6000AB288F /* Rate.m in Sources */,
 				A5C21E061E9CCA6000AB288F /* Consumer.m in Sources */,
 				A5C21DF71E9CCA4400AB288F /* TestMerchantServer.m in Sources */,
+				A5CD46481EC326B2004AF3E5 /* Receipt.m in Sources */,
 				A5C21DF81E9CCA4400AB288F /* TestPaynetServer.m in Sources */,
 				A5C21DF91E9CCA4400AB288F /* TestServer.m in Sources */,
 				A5C21DC81E9BE2BA00AB288F /* PaynetEasyTransferTests.m in Sources */,
