@@ -61,6 +61,7 @@ sourceCard.number = @"4444555566661111";
 sourceCard.expiryMonth = @1;
 sourceCard.expiryYear = @2020;
 sourceCard.securityCode = @"111";
+sourceCard.cardHolder = @"CARDHOLDER";
 
 // destination card
 Card *destCard = [[Card alloc] init];
