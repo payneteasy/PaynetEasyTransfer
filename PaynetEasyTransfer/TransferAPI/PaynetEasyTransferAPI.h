@@ -38,6 +38,14 @@
                 destCard:(id<CardProtocol>)destCard
            completeBlock:(void(^)(BOOL result, NSError *error))completeBlock;
 
+- (void)emailTransfer:(NSString *)orderId
+              onEmail:(NSString *)email
+        completeBlock:(void(^)(BOOL result, NSError *error))completeBlock;
+
+- (void)feedbackOnTransfer:(NSString *)orderId
+                  feedback:(NSString *)feedback
+             completeBlock:(void(^)(BOOL result, NSError *error))completeBlock;
+
 // paynet methods
 
 - (void)tranferMoney:(id<SessionProtocol>)session

@@ -8,11 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSUInteger, ReceiptStatus) {
-    ReceiptStatusUnknown = 0,
-    ReceiptStatusApproved,
-    ReceiptStatusDeclined,
-    ReceiptStatusCancelled
+typedef NS_ENUM(NSUInteger, TransferStatus) {
+    TransferStatusUnknown = 0,
+    TransferStatusApproved,
+    TransferStatusDeclined,
+    TransferStatusCancelled,
+    TransferStatusError
 };
 
 @protocol ReceiptProtocol
@@ -25,6 +26,6 @@ typedef NS_ENUM(NSUInteger, ReceiptStatus) {
 @property (nonatomic) NSNumber *commissionCentis;
 @property (nonatomic) NSString *currency;
 @property (nonatomic) NSString *comment;
-@property (nonatomic) ReceiptStatus status;
+@property (nonatomic) TransferStatus status;
 
 @end

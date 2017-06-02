@@ -104,6 +104,18 @@
     }];
 }
 
+- (void)emailTransfer:(NSString *)orderId
+              onEmail:(NSString *)email
+        completeBlock:(void(^)(BOOL result, NSError *error))completeBlock {
+    completeBlock(YES, nil);
+}
+
+- (void)feedbackOnTransfer:(NSString *)orderId
+                  feedback:(NSString *)feedback
+             completeBlock:(void(^)(BOOL result, NSError *error))completeBlock {
+    completeBlock(YES, nil);
+}
+
 #pragma mark - paynet methods
 
 - (void)tranferMoney:(id<SessionProtocol>)session
@@ -146,7 +158,7 @@
             if (receipt) {
                 receipt.sourceCard = sourceCard.number;
                 receipt.destCard = destCard.number;
-                receipt.status = ReceiptStatusUnknown;
+                receipt.status = TransferStatusUnknown;
             }
             [self checkTransferStatus:session
                           transaction:transaction
@@ -192,7 +204,7 @@
                 } else if ([state isEqualToString:transferState_APPROVED]) {
                     if (receipt) {
                         [self parseReceipt:receipt fromDict:result];
-                        receipt.status = ReceiptStatusApproved;
+                        receipt.status = TransferStatusApproved;
                     }
                     completeBlock(YES, nil);
                 // redirect
@@ -205,7 +217,7 @@
                 } else {
                     if (receipt) {
                         [self parseReceipt:receipt fromDict:result];
-                        receipt.status = ReceiptStatusDeclined;
+                        receipt.status = TransferStatusDeclined;
                     }
                     completeBlock(NO, nil);
                 }
@@ -225,11 +237,14 @@
                 }
             } else {
                 if (receipt)
-                    receipt.status = ReceiptStatusCancelled;
+                    receipt.status = TransferStatusCancelled;
                 completeBlock(NO, nil);
             }
-        } else
+        } else {
+            if (receipt)
+                receipt.status = TransferStatusError;
             completeBlock(NO, error);
+        }
     }];
 }
 
