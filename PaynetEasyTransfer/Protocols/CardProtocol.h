@@ -10,6 +10,7 @@
 
 @protocol CardProtocol
 
+@property (nonatomic) NSString *cardId;
 @property (nonatomic) NSString *number;
 @property (nonatomic) NSString *securityCode;
 @property (nonatomic) NSNumber *expiryMonth;

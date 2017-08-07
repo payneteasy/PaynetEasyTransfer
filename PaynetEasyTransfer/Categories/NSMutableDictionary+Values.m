@@ -20,6 +20,8 @@ static NSString *const KeyPathDelimiter = @".";
 }
 
 - (void)set_Object:(id)object onObject:(id)target forPath:(NSString *)keyPath createIntermediateDictionaries:(BOOL)createIntermediates replaceIntermediateObjects:(BOOL)replaceIntermediates {
+    if (!object)
+        return;
     
     if (!keyPath) {
         [NSException raise:NSInvalidArgumentException format:@""];

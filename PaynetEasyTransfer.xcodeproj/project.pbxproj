@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		08904E5AA65C78D879F2318B /* libPods-PaynetEasyTransferTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0FC9B209A04B8F5D0FD8C93 /* libPods-PaynetEasyTransferTests.a */; };
+		A54617551F0BC3C500D87423 /* BaseTransferAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = A54617531F0BC3C500D87423 /* BaseTransferAPI.m */; };
+		A54617561F0BC3C500D87423 /* BaseTransferAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = A54617541F0BC3C500D87423 /* BaseTransferAPI.h */; };
+		A54617591F0BC47400D87423 /* MerchantAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = A54617571F0BC47400D87423 /* MerchantAPI.h */; };
+		A546175A1F0BC47400D87423 /* MerchantAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = A54617581F0BC47400D87423 /* MerchantAPI.m */; };
 		A56A05DF1EC3143900397663 /* ReceiptProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A56A05DE1EC3143900397663 /* ReceiptProtocol.h */; };
 		A5C21DC31E9BE2BA00AB288F /* PaynetEasyTransfer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5C21DB91E9BE2BA00AB288F /* PaynetEasyTransfer.framework */; };
 		A5C21DC81E9BE2BA00AB288F /* PaynetEasyTransferTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C21DC71E9BE2BA00AB288F /* PaynetEasyTransferTests.m */; };
@@ -23,8 +27,8 @@
 		A5C21DEB1E9BE36300AB288F /* NSDictionary+Values.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C21DDD1E9BE36300AB288F /* NSDictionary+Values.m */; };
 		A5C21DEC1E9BE36300AB288F /* NSMutableDictionary+Values.h in Headers */ = {isa = PBXBuildFile; fileRef = A5C21DDE1E9BE36300AB288F /* NSMutableDictionary+Values.h */; };
 		A5C21DED1E9BE36300AB288F /* NSMutableDictionary+Values.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C21DDF1E9BE36300AB288F /* NSMutableDictionary+Values.m */; };
-		A5C21DEE1E9BE36300AB288F /* PaynetEasyTransferAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = A5C21DE11E9BE36300AB288F /* PaynetEasyTransferAPI.h */; };
-		A5C21DEF1E9BE36300AB288F /* PaynetEasyTransferAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C21DE21E9BE36300AB288F /* PaynetEasyTransferAPI.m */; };
+		A5C21DEE1E9BE36300AB288F /* PaynetEasyAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = A5C21DE11E9BE36300AB288F /* PaynetEasyAPI.h */; };
+		A5C21DEF1E9BE36300AB288F /* PaynetEasyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C21DE21E9BE36300AB288F /* PaynetEasyAPI.m */; };
 		A5C21DF71E9CCA4400AB288F /* TestMerchantServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C21DF21E9CCA4400AB288F /* TestMerchantServer.m */; };
 		A5C21DF81E9CCA4400AB288F /* TestPaynetServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C21DF41E9CCA4400AB288F /* TestPaynetServer.m */; };
 		A5C21DF91E9CCA4400AB288F /* TestServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C21DF61E9CCA4400AB288F /* TestServer.m */; };
@@ -50,6 +54,10 @@
 		3C57A929467C45E181FDC759 /* Pods-PaynetEasyTransferTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaynetEasyTransferTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PaynetEasyTransferTests/Pods-PaynetEasyTransferTests.debug.xcconfig"; sourceTree = "<group>"; };
 		608EFE0080C5EEE24BB45065 /* libPods-PaynetEasyTransfer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PaynetEasyTransfer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95DCB961527B0FDFC8FC3E6C /* Pods-PaynetEasyTransferTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaynetEasyTransferTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PaynetEasyTransferTests/Pods-PaynetEasyTransferTests.release.xcconfig"; sourceTree = "<group>"; };
+		A54617531F0BC3C500D87423 /* BaseTransferAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTransferAPI.m; sourceTree = "<group>"; };
+		A54617541F0BC3C500D87423 /* BaseTransferAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTransferAPI.h; sourceTree = "<group>"; };
+		A54617571F0BC47400D87423 /* MerchantAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerchantAPI.h; sourceTree = "<group>"; };
+		A54617581F0BC47400D87423 /* MerchantAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerchantAPI.m; sourceTree = "<group>"; };
 		A56A05DE1EC3143900397663 /* ReceiptProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiptProtocol.h; sourceTree = "<group>"; };
 		A5C21DB91E9BE2BA00AB288F /* PaynetEasyTransfer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PaynetEasyTransfer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5C21DBC1E9BE2BA00AB288F /* PaynetEasyTransfer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaynetEasyTransfer.h; sourceTree = "<group>"; };
@@ -68,8 +76,8 @@
 		A5C21DDD1E9BE36300AB288F /* NSDictionary+Values.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Values.m"; sourceTree = "<group>"; };
 		A5C21DDE1E9BE36300AB288F /* NSMutableDictionary+Values.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+Values.h"; sourceTree = "<group>"; };
 		A5C21DDF1E9BE36300AB288F /* NSMutableDictionary+Values.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+Values.m"; sourceTree = "<group>"; };
-		A5C21DE11E9BE36300AB288F /* PaynetEasyTransferAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaynetEasyTransferAPI.h; sourceTree = "<group>"; };
-		A5C21DE21E9BE36300AB288F /* PaynetEasyTransferAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaynetEasyTransferAPI.m; sourceTree = "<group>"; };
+		A5C21DE11E9BE36300AB288F /* PaynetEasyAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaynetEasyAPI.h; sourceTree = "<group>"; };
+		A5C21DE21E9BE36300AB288F /* PaynetEasyAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaynetEasyAPI.m; sourceTree = "<group>"; };
 		A5C21DF11E9CCA4400AB288F /* TestMerchantServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMerchantServer.h; sourceTree = "<group>"; };
 		A5C21DF21E9CCA4400AB288F /* TestMerchantServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestMerchantServer.m; sourceTree = "<group>"; };
 		A5C21DF31E9CCA4400AB288F /* TestPaynetServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestPaynetServer.h; sourceTree = "<group>"; };
@@ -192,8 +200,12 @@
 		A5C21DE01E9BE36300AB288F /* TransferAPI */ = {
 			isa = PBXGroup;
 			children = (
-				A5C21DE11E9BE36300AB288F /* PaynetEasyTransferAPI.h */,
-				A5C21DE21E9BE36300AB288F /* PaynetEasyTransferAPI.m */,
+				A54617541F0BC3C500D87423 /* BaseTransferAPI.h */,
+				A54617531F0BC3C500D87423 /* BaseTransferAPI.m */,
+				A5C21DE11E9BE36300AB288F /* PaynetEasyAPI.h */,
+				A5C21DE21E9BE36300AB288F /* PaynetEasyAPI.m */,
+				A54617571F0BC47400D87423 /* MerchantAPI.h */,
+				A54617581F0BC47400D87423 /* MerchantAPI.m */,
 			);
 			path = TransferAPI;
 			sourceTree = "<group>";
@@ -252,11 +264,13 @@
 				A5C21DE81E9BE36300AB288F /* NSDictionary+Utils.h in Headers */,
 				A5C21DE51E9BE36300AB288F /* RateProtocol.h in Headers */,
 				A56A05DF1EC3143900397663 /* ReceiptProtocol.h in Headers */,
-				A5C21DEE1E9BE36300AB288F /* PaynetEasyTransferAPI.h in Headers */,
+				A5C21DEE1E9BE36300AB288F /* PaynetEasyAPI.h in Headers */,
 				A5C21DEA1E9BE36300AB288F /* NSDictionary+Values.h in Headers */,
 				A5C21DCA1E9BE2BA00AB288F /* PaynetEasyTransfer.h in Headers */,
 				A5C21DE71E9BE36300AB288F /* TransactionProtocol.h in Headers */,
+				A54617591F0BC47400D87423 /* MerchantAPI.h in Headers */,
 				A5C21DEC1E9BE36300AB288F /* NSMutableDictionary+Values.h in Headers */,
+				A54617561F0BC3C500D87423 /* BaseTransferAPI.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,8 +423,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5C21DEF1E9BE36300AB288F /* PaynetEasyTransferAPI.m in Sources */,
+				A5C21DEF1E9BE36300AB288F /* PaynetEasyAPI.m in Sources */,
 				A5C21DED1E9BE36300AB288F /* NSMutableDictionary+Values.m in Sources */,
+				A546175A1F0BC47400D87423 /* MerchantAPI.m in Sources */,
+				A54617551F0BC3C500D87423 /* BaseTransferAPI.m in Sources */,
 				A5C21DEB1E9BE36300AB288F /* NSDictionary+Values.m in Sources */,
 				A5C21DE91E9BE36300AB288F /* NSDictionary+Utils.m in Sources */,
 			);

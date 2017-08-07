@@ -19,9 +19,12 @@ typedef NS_ENUM(NSUInteger, TransferStatus) {
 @protocol ReceiptProtocol
 
 @property (nonatomic) NSString *orderId;
+@property (nonatomic) NSString *invoiceId;
 @property (nonatomic) NSDate *date;
 @property (nonatomic) NSString *sourceCard;
+@property (nonatomic) NSString *sourceCardId;
 @property (nonatomic) NSString *destCard;
+@property (nonatomic) NSString *destCardId;
 @property (nonatomic) NSNumber *amountCentis;
 @property (nonatomic) NSNumber *commissionCentis;
 @property (nonatomic) NSString *currency;
