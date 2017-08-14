@@ -7,13 +7,14 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "PaynetEasyTransferAPI.h"
 #import "TestPaynetServer.h"
 #import "TestMerchantServer.h"
-#import "Consumer.h"
-#import "Card.h"
+#import "PaynetEasyAPI.h"
+#import "MerchantAPI.h"
 #import "Session.h"
 #import "Transaction.h"
+#import "Consumer.h"
+#import "Card.h"
 #import "Receipt.h"
 
 @interface PaynetEasyTransferTests : XCTestCase
@@ -23,7 +24,8 @@
 @implementation PaynetEasyTransferTests {
     TestPaynetServer *paynetTestServer;
     TestMerchantServer *merchantTestServer;
-    PaynetEasyTransferAPI *transferApi;
+    PaynetEasyAPI *transferApi;
+    MerchantAPI *merchantApi;
 }
 
 - (void)setUp {
@@ -35,12 +37,9 @@
     merchantTestServer = [[TestMerchantServer alloc] initWithPort:20002];
     [merchantTestServer start];
     
-    transferApi = [[PaynetEasyTransferAPI alloc] init];
-    transferApi.paynetURL = paynetTestServer.paynetURL;
-    transferApi.merchantAuthURL = merchantTestServer.merchantAuthURL;
-    transferApi.merchantTransferRateURL = merchantTestServer.merchantTransferRateURL;
-    transferApi.merchantTransferInitURL = merchantTestServer.merchantTransferInitURL;
+    transferApi = [[PaynetEasyAPI alloc] initWithAddress:paynetTestServer.serverHost.absoluteString];
     [transferApi setTimeoutInterval:10];
+    merchantApi = [[MerchantAPI alloc] initWithAddress:merchantTestServer.serverHost.absoluteString];
 }
 
 - (void)tearDown {
@@ -67,7 +66,8 @@
     XCTestExpectation *expectation = [self expectationWithDescription:@"Transfer"];
     
     Session *session = [[Session alloc] init];
-    [transferApi requestAccessToken:session completeBlock:^(BOOL result, NSError *error) {
+    
+    [merchantApi requestAccessToken:session completeBlock:^(BOOL result, NSError *error) {
         if (result) {
             Transaction *transaction = [[Transaction alloc] init];
             transaction.amountCentis = @(round(amount * 100));
@@ -76,7 +76,7 @@
             Receipt *receipt = [[Receipt alloc] init];
             
             // initiate transfer request
-            [transferApi initiateTransfer:session
+            [merchantApi initiateTransfer:session
                               transaction:transaction
                                  consumer:consumer
                                sourceCard:sourceCard
@@ -94,7 +94,7 @@
                                 continueBlock:nil
                                 completeBlock:^(BOOL result, NSError *error) {
                                     NSLog(@"PaynetEasyTransferAPI.transferMoney result: %@.", result ? @"approved" : @"declined");
-                                    XCTAssert(result && receipt.status == ReceiptStatusApproved);
+                                    XCTAssert(result && receipt.status == TransferStatusApproved);
                                     [expectation fulfill];
                                 }];
                 } else {

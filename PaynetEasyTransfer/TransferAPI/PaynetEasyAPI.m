@@ -72,6 +72,7 @@
     
     // url
     NSURL *url = self.baseURL;
+    url = [url URLByAppendingPathComponent:@"transfer"];
     url = [url URLByAppendingPathComponent:transaction.endpointId];
     url = [url URLByAppendingPathComponent:transaction.invoiceId];
     
@@ -111,6 +112,7 @@
     
     // url
     NSURL *url = self.baseURL;
+    url = [url URLByAppendingPathComponent:@"transfer"];
     url = [url URLByAppendingPathComponent:transaction.endpointId];
     url = [url URLByAppendingPathComponent:transaction.invoiceId];
     url = [url URLByAppendingPathComponent:@"status"];

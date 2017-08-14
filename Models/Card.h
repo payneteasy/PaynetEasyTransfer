@@ -10,6 +10,7 @@
 
 @interface Card : NSObject <CardProtocol>
 
+@property (nonatomic, strong) NSString *cardId;
 @property (nonatomic, strong) NSString *number;
 @property (nonatomic, strong) NSString *securityCode;
 @property (nonatomic, strong) NSNumber *expiryMonth;

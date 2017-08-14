@@ -10,31 +10,13 @@
 #import "NSDictionary+Values.h"
 #import "NSMutableDictionary+Values.h"
 
-@implementation TestMerchantServer {
-
-}
-
-static NSString *merchantAuthPath = @"auth/request-access-token";
-static NSString *merchantTransferRatePath = @"transfer/get-rate";
-static NSString *merchantTransferInitPath = @"transfer/initiate-transfer";
-
-- (NSURL *)merchantAuthURL {
-    return [self.serverHost URLByAppendingPathComponent:merchantAuthPath];
-}
-
-- (NSURL *)merchantTransferRateURL {
-    return [self.serverHost URLByAppendingPathComponent:merchantTransferRatePath];
-}
-
-- (NSURL *)merchantTransferInitURL {
-    return [self.serverHost URLByAppendingPathComponent:merchantTransferInitPath];
-}
+@implementation TestMerchantServer
 
 - (void)initWebServer:(GCDWebServer *)webServer {
     [webServer removeAllHandlers];
 
     [webServer addHandlerForMethod:@"GET"
-                              path:[NSString stringWithFormat:@"/%@", merchantAuthPath]
+                              path:@"/auth/request-access-token"
                       requestClass:[GCDWebServerDataRequest class]
                       processBlock:^GCDWebServerResponse *(GCDWebServerRequest* request) {
                           
@@ -48,24 +30,7 @@ static NSString *merchantTransferInitPath = @"transfer/initiate-transfer";
                       }];
 
     [webServer addHandlerForMethod:@"POST"
-                              path:[NSString stringWithFormat:@"/%@", merchantTransferRatePath]
-                      requestClass:[GCDWebServerDataRequest class]
-                      processBlock:^GCDWebServerResponse *(GCDWebServerRequest* request) {
-                          
-                          // response
-                          NSMutableDictionary *output = [NSMutableDictionary dictionary];
-                          [output set_Object:@1.5 forPath:@"rateInterest"];
-                          [output set_Object:@35 forPath:@"rateMin"];
-                          [output set_Object:@50 forPath:@"limitMin"];
-                          [output set_Object:@75000 forPath:@"limitMax"];
-                          
-                          NSLog(@"Output: %@", output);
-                          
-                          return [GCDWebServerDataResponse responseWithJSONObject:output];
-                      }];
-    
-    [webServer addHandlerForMethod:@"POST"
-                              path:[NSString stringWithFormat:@"/%@", merchantTransferInitPath]
+                              path:@"/transfer/initiate-transfer"
                       requestClass:[GCDWebServerDataRequest class]
                       processBlock:^GCDWebServerResponse *(GCDWebServerRequest* request) {
                           

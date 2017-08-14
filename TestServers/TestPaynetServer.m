@@ -13,17 +13,11 @@
     NSString *lastStatus;
 }
 
-static NSString *paynetServerPath = @"transfer";
-
-- (NSURL *)paynetURL {
-    return [self.serverHost URLByAppendingPathComponent:paynetServerPath];
-}
-
 - (void)initWebServer:(GCDWebServer *)webServer {
     [webServer removeAllHandlers];
 
     [webServer addHandlerForMethod:@"POST"
-                         pathRegex:[NSString stringWithFormat:@"/%@/(.+)/(.+)", paynetServerPath]
+                         pathRegex:@"/transfer/(.+)/(.+)"
                       requestClass:[GCDWebServerDataRequest class]
                       processBlock:^GCDWebServerResponse *(GCDWebServerRequest* request) {
 
@@ -70,7 +64,7 @@ static NSString *paynetServerPath = @"transfer";
                       }];
     
     [webServer addHandlerForMethod:@"POST"
-                         pathRegex:[NSString stringWithFormat:@"/%@/(.+)/(.+)/status", paynetServerPath]
+                         pathRegex:@"/transfer/(.+)/(.+)/status"
                       requestClass:[GCDWebServerDataRequest class]
                       processBlock:^GCDWebServerResponse *(GCDWebServerRequest* request) {
                           

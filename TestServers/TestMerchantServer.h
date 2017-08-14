@@ -10,8 +10,4 @@
 
 @interface TestMerchantServer : TestServer
 
-- (NSURL *)merchantAuthURL;
-- (NSURL *)merchantTransferRateURL;
-- (NSURL *)merchantTransferInitURL;
-
 @end
