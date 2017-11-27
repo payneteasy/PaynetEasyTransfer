@@ -12,6 +12,5 @@ target 'PaynetEasyTransferExample' do
     pod 'PaynetEasyTransfer', :path => 'PaynetEasyTransfer.podspec'
     pod 'GCDWebServer'
     pod 'TPKeyboardAvoiding'
-    pod 'SHSPhoneComponent'
     project 'PaynetEasyTransferExample.xcodeproj'
 end

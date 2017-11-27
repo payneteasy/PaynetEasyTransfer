@@ -10,20 +10,17 @@
 #import "WebViewController.h"
 #import "TestPaynetServer.h"
 #import "TestMerchantServer.h"
-#import "UIViewController+Alert.h"
-#import "SourceCardCell.h"
-#import "DestCardCell.h"
-#import "SubmitCell.h"
-#import "NSBundle+Values.h"
-#import "PaynetEasyTransferAPI.h"
+
+#import "PaynetEasyAPI.h"
+#import "MerchantAPI.h"
+
 #import "Transaction.h"
 #import "Session.h"
 #import "Card.h"
-#import "Rate.h"
 #import "Consumer.h"
 #import "Receipt.h"
 
-@interface TransferController () <UITableViewDataSource, UITableViewDelegate, SubmitCellDelegate, WebViewControllerDelegate>
+@interface TransferController () <WebViewControllerDelegate>
 
 @end
 
@@ -31,16 +28,15 @@
     TestPaynetServer *paynetTestServer;
     TestMerchantServer *merchantTestServer;
     
-    PaynetEasyTransferAPI *transferApi;
-    
+    PaynetEasyAPI *transferApi;
+    MerchantAPI *merchantApi;
+
+    Session *session;
     Consumer *consumer;
-    Rate *rate;
+
     NSString *webContent;
     BOOL stopTransfer;
     
-    SourceCardCell *sourceCardCell;
-    DestCardCell *destCardCell;
-    SubmitCell *submitCell;
     WebViewController *webViewController;
 }
 
@@ -51,33 +47,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
+    // Only for example, use real servers
     paynetTestServer = [[TestPaynetServer alloc] initWithPort:10001];
     [paynetTestServer start];
-    
     merchantTestServer = [[TestMerchantServer alloc] initWithPort:10002];
     [merchantTestServer start];
-
-    transferApi = [[PaynetEasyTransferAPI alloc] init];
-    transferApi.paynetURL = paynetTestServer.paynetURL;
-    transferApi.merchantAuthURL = merchantTestServer.merchantAuthURL;
-    transferApi.merchantTransferRateURL = merchantTestServer.merchantTransferRateURL;
-    transferApi.merchantTransferInitURL = merchantTestServer.merchantTransferInitURL;
+    
+    transferApi = [[PaynetEasyAPI alloc] initWithAddress:paynetTestServer.serverHost.absoluteString];
+    merchantApi = [[MerchantAPI alloc] initWithAddress:merchantTestServer.serverHost.absoluteString];
 
     consumer = [[Consumer alloc] init];
-    consumer.deviceNumber = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
-    rate = [[Rate alloc] init];
-    [self requestComission];
+    consumer.deviceNumber = [[UIDevice currentDevice].identifierForVendor UUIDString];
     
-    webContent = [NSBundle readTextFile:@"transfer.html"];
-}
-
-- (void)requestComission {
-    [transferApi requestTransferRate:rate completeBlock:^(BOOL result, NSError *error) {
-        if (result) {
-            [self updateTransferAmount];
-        }
-    }];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"transfer" ofType:@"html"];
+    webContent = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
 }
 
 - (void)transferAmount:(double)amount
@@ -90,9 +74,9 @@
     
     [self showWebStatus:@"Обработка перевода..." andHide:NO];
     
-    // request access token
+    // 1. Request access token
     Session *session = [[Session alloc] init];
-    [transferApi requestAccessToken:session completeBlock:^(BOOL result, NSError *error) {
+    [merchantApi requestAccessToken:session completeBlock:^(BOOL result, NSError *error) {
         if (result) {
             Transaction *transaction = [[Transaction alloc] init];
             transaction.amountCentis = @(round(amount * 100));
@@ -100,15 +84,15 @@
             
             Receipt *receipt = [[Receipt alloc] init];
             
-            // initiate transfer request
-            [transferApi initiateTransfer:session
+            // 2. Initiate transfer request
+            [merchantApi initiateTransfer:session
                               transaction:transaction
                                  consumer:consumer
                                sourceCard:sourceCard
                                  destCard:destCard
                             completeBlock:^(BOOL result, NSError *error) {
                 if (result) {
-                    // transfer money
+                    // 3. Transfer money
                     [transferApi tranferMoney:session
                                   transaction:transaction
                                      consumer:consumer
@@ -136,20 +120,9 @@
     }];
 }
 
-- (void)updateTransferAmount {
-    double amount = submitCell.amount;
-    double comission = round(amount * rate.interest.doubleValue / 100);
-    if (amount > 0 && rate.rateMin.doubleValue)
-        comission = MAX(comission, rate.rateMin.doubleValue);
-    if (amount > 0 && rate.rateMax.doubleValue)
-        comission = MIN(comission, rate.rateMax.doubleValue);
-    
-    submitCell.comission = comission;
-}
-
 - (void)showWebStatus:(NSString *)status andHide:(BOOL)hide {
     if (!webViewController) {
-        webViewController = [[WebViewController alloc] initWithNibName:NSStringFromClass([WebViewController class]) bundle:nil];
+        webViewController = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([WebViewController class])];
         webViewController.delegate = self;
         [self.navigationController pushViewController:webViewController animated:NO];
     }
@@ -167,92 +140,6 @@
     webViewController = nil;
 }
 
-#pragma mark - UITableViewDataSource
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *cellIdentifier;
-    switch (indexPath.row) {
-        case 0: {
-            cellIdentifier = NSStringFromClass([SourceCardCell class]);
-            sourceCardCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-            return sourceCardCell;
-            break;
-        }
-        case 1: {
-            cellIdentifier = NSStringFromClass([DestCardCell class]);
-            destCardCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-            return destCardCell;
-            break;
-        }
-        case 2: {
-            cellIdentifier = NSStringFromClass([SubmitCell class]);
-            submitCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-            submitCell.delegate = self;
-            return submitCell;
-            break;
-        }
-    }
-    return nil;
-}
-
-- (BOOL)checkCardNumber:(NSString *)cardNumber {
-    return cardNumber.length > 6;
-}
-
-#pragma mark - SubmitCellDelegate
-
-- (void)submitCellDidSubmit:(SubmitCell *)cell {
-    if (![self checkCardNumber:sourceCardCell.number] || ![self checkCardNumber:destCardCell.number]) {
-        [self alertInfoWithTitle:nil
-                         message:[NSString stringWithFormat:@"Некорректный номер карты"]
-                         handler:nil];
-        return;
-    }
-    if (submitCell.amount < rate.limitMin.doubleValue) {
-        [self alertInfoWithTitle:nil
-                         message:[NSString stringWithFormat:@"Сумма перевода не может быть меньше %.f", rate.limitMin.doubleValue]
-                         handler:^{
-                             cell.amount = rate.limitMin.doubleValue;
-                             [self updateTransferAmount];
-                         }];
-        return;
-    }
-    if (rate.limitMax.doubleValue && cell.amount > rate.limitMax.doubleValue) {
-        [self alertInfoWithTitle:nil
-                         message:[NSString stringWithFormat:@"Сумма перевода не может быть больше %.f", rate.limitMax.doubleValue]
-                         handler:^{
-                             cell.amount = rate.limitMax.doubleValue;
-                             [self updateTransferAmount];
-                         }];
-        return;
-    }
-    
-    [[self view] endEditing:YES];
-    
-    Card *sourceCard = [[Card alloc] init];
-    sourceCard.number = sourceCardCell.number;
-    sourceCard.securityCode = sourceCardCell.code;
-    sourceCard.expiryMonth = sourceCardCell.expiryMonth;
-    sourceCard.expiryYear = sourceCardCell.expiryYear;
-    sourceCard.cardHolder = sourceCardCell.cardHolder;
-    
-    Card *destCard = [[Card alloc] init];
-    destCard.number = destCardCell.number;
-    
-    [self transferAmount:cell.amount
-                currency:@"RUB"
-                fromCard:sourceCard
-                  toCard:destCard];
-}
-
-- (void)submitCellDidChange:(SubmitCell *)cell {
-    [self updateTransferAmount];
-}
-
 #pragma mark - WebViewControllerDelegate
 
 - (void)webControllerDidClose:(WebViewController *)controller {
@@ -261,6 +148,27 @@
 
 - (IBAction)gestureRecognizerAction:(id)sender {
     [self.view endEditing:YES];
+}
+
+#pragma mark - Actions
+
+- (IBAction)buttonSubmitUpInside:(id)sender {
+    [[self view] endEditing:YES];
+    
+    Card *sourceCard = [[Card alloc] init];
+    sourceCard.number = self.fieldSourceCardNumber.text;
+    sourceCard.securityCode = self.fieldSourceSecurityCode.text;
+    sourceCard.expiryMonth = @(self.fieldSourceExpiryMonth.text.intValue);
+    sourceCard.expiryYear = @(self.fieldSourceExpiryYear.text.intValue);
+    sourceCard.cardHolder = self.fieldSourceCardHolder.text;
+    
+    Card *destCard = [[Card alloc] init];
+    destCard.number = self.fieldDestCardNumber.text;
+    
+    [self transferAmount:self.fieldAmount.text.doubleValue
+                currency:@"RUB"
+                fromCard:sourceCard
+                  toCard:destCard];
 }
 
 @end

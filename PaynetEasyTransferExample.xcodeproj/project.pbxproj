@@ -14,23 +14,16 @@
 		A508EB121E81634C00D05615 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A508EB111E81634C00D05615 /* Assets.xcassets */; };
 		A50F90DE1E9AF51500C35165 /* NSDictionary+Values.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F90DD1E9AF51500C35165 /* NSDictionary+Values.m */; };
 		A50F90E11E9AF52E00C35165 /* NSMutableDictionary+Values.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F90E01E9AF52E00C35165 /* NSMutableDictionary+Values.m */; };
+		A51E327D1FCC376F00106088 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51E327C1FCC376E00106088 /* LaunchScreen.storyboard */; };
 		A52A87941E8A6E52008DD9FD /* Consumer.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A878C1E8A6E52008DD9FD /* Consumer.m */; };
 		A52A87951E8A6E52008DD9FD /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A878E1E8A6E52008DD9FD /* Session.m */; };
 		A52A87961E8A6E52008DD9FD /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A87901E8A6E52008DD9FD /* Card.m */; };
 		A52A87971E8A6E52008DD9FD /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A87911E8A6E52008DD9FD /* Transaction.m */; };
-		A52A879F1E8A8ACB008DD9FD /* SourceCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A879E1E8A8ACB008DD9FD /* SourceCardCell.m */; };
-		A52A87A21E8A8C7C008DD9FD /* DestCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A87A11E8A8C7C008DD9FD /* DestCardCell.m */; };
-		A52A87A51E8A8D14008DD9FD /* SubmitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A87A41E8A8D14008DD9FD /* SubmitCell.m */; };
 		A52A87B21E8AA41D008DD9FD /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A87B01E8AA41D008DD9FD /* WebViewController.m */; };
 		A52A87C31E8BBA08008DD9FD /* transfer.html in Resources */ = {isa = PBXBuildFile; fileRef = A52A87C21E8BBA08008DD9FD /* transfer.html */; };
-		A52A87C71E8BBC78008DD9FD /* NSBundle+Values.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A87C61E8BBC78008DD9FD /* NSBundle+Values.m */; };
-		A52A887F1E8D0732008DD9FD /* Rate.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A887E1E8D0732008DD9FD /* Rate.m */; };
-		A5C21CB71E92702600AB288F /* UIViewController+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C21CB61E92702600AB288F /* UIViewController+Alert.m */; };
-		A5C21CE21E927C9000AB288F /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5C21CE11E927C9000AB288F /* WebViewController.xib */; };
 		A5C21CF81E93C86100AB288F /* TestPaynetServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C21CF71E93C86100AB288F /* TestPaynetServer.m */; };
 		A5C21CFB1E93C98300AB288F /* TestServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C21CFA1E93C98300AB288F /* TestServer.m */; };
 		A5C21D011E94E88A00AB288F /* TestMerchantServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C21D001E94E88A00AB288F /* TestMerchantServer.m */; };
-		A5C21E0C1E9CDC8500AB288F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5C21E0A1E9CDC8500AB288F /* LaunchScreen.storyboard */; };
 		A5CD46451EC32141004AF3E5 /* Receipt.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CD46441EC32141004AF3E5 /* Receipt.m */; };
 		D899F492F948AC346B086B60 /* libPods-PaynetEasyTransferExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E3247A830C3C1E54C2DE071 /* libPods-PaynetEasyTransferExample.a */; };
 /* End PBXBuildFile section */
@@ -52,6 +45,7 @@
 		A50F90DF1E9AF52E00C35165 /* NSMutableDictionary+Values.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+Values.h"; sourceTree = "<group>"; };
 		A50F90E01E9AF52E00C35165 /* NSMutableDictionary+Values.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+Values.m"; sourceTree = "<group>"; };
 		A5153ECCD34E448297D14682 /* Pods-PaynetEasyTransferExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaynetEasyTransferExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PaynetEasyTransferExample/Pods-PaynetEasyTransferExample.debug.xcconfig"; sourceTree = "<group>"; };
+		A51E327C1FCC376E00106088 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A52A87891E8A6E52008DD9FD /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
 		A52A878C1E8A6E52008DD9FD /* Consumer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Consumer.m; sourceTree = "<group>"; };
 		A52A878D1E8A6E52008DD9FD /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
@@ -60,29 +54,15 @@
 		A52A87901E8A6E52008DD9FD /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
 		A52A87911E8A6E52008DD9FD /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
 		A52A87921E8A6E52008DD9FD /* Consumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Consumer.h; sourceTree = "<group>"; };
-		A52A879D1E8A8ACB008DD9FD /* SourceCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SourceCardCell.h; sourceTree = "<group>"; };
-		A52A879E1E8A8ACB008DD9FD /* SourceCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourceCardCell.m; sourceTree = "<group>"; };
-		A52A87A01E8A8C7C008DD9FD /* DestCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestCardCell.h; sourceTree = "<group>"; };
-		A52A87A11E8A8C7C008DD9FD /* DestCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestCardCell.m; sourceTree = "<group>"; };
-		A52A87A31E8A8D14008DD9FD /* SubmitCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmitCell.h; sourceTree = "<group>"; };
-		A52A87A41E8A8D14008DD9FD /* SubmitCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmitCell.m; sourceTree = "<group>"; };
 		A52A87AF1E8AA41D008DD9FD /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		A52A87B01E8AA41D008DD9FD /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		A52A87C21E8BBA08008DD9FD /* transfer.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = transfer.html; sourceTree = "<group>"; };
-		A52A87C51E8BBC78008DD9FD /* NSBundle+Values.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+Values.h"; sourceTree = "<group>"; };
-		A52A87C61E8BBC78008DD9FD /* NSBundle+Values.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Values.m"; sourceTree = "<group>"; };
-		A52A887D1E8D0732008DD9FD /* Rate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rate.h; sourceTree = "<group>"; };
-		A52A887E1E8D0732008DD9FD /* Rate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rate.m; sourceTree = "<group>"; };
-		A5C21CB51E92702600AB288F /* UIViewController+Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Alert.h"; sourceTree = "<group>"; };
-		A5C21CB61E92702600AB288F /* UIViewController+Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Alert.m"; sourceTree = "<group>"; };
-		A5C21CE11E927C9000AB288F /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
 		A5C21CF61E93C86100AB288F /* TestPaynetServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestPaynetServer.h; sourceTree = "<group>"; };
 		A5C21CF71E93C86100AB288F /* TestPaynetServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestPaynetServer.m; sourceTree = "<group>"; };
 		A5C21CF91E93C98300AB288F /* TestServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestServer.h; sourceTree = "<group>"; };
 		A5C21CFA1E93C98300AB288F /* TestServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestServer.m; sourceTree = "<group>"; };
 		A5C21CFF1E94E88A00AB288F /* TestMerchantServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMerchantServer.h; sourceTree = "<group>"; };
 		A5C21D001E94E88A00AB288F /* TestMerchantServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestMerchantServer.m; sourceTree = "<group>"; };
-		A5C21E0B1E9CDC8500AB288F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5CD46431EC32141004AF3E5 /* Receipt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Receipt.h; sourceTree = "<group>"; };
 		A5CD46441EC32141004AF3E5 /* Receipt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Receipt.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,14 +119,14 @@
 			children = (
 				A508EB231E8166D100D05615 /* Models */,
 				A52A879C1E8A8A8A008DD9FD /* Views */,
-				A52A87AA1E8AA197008DD9FD /* Controlers */,
+				A52A87AA1E8AA197008DD9FD /* Controllers */,
 				A5C21CF51E93BC6000AB288F /* TestServers */,
 				A52A87C41E8BBC3D008DD9FD /* Categories */,
 				A52A87C11E8BBA08008DD9FD /* Resources */,
 				A508EB081E81634C00D05615 /* AppDelegate.h */,
 				A508EB091E81634C00D05615 /* AppDelegate.m */,
 				A508EB0E1E81634C00D05615 /* Main.storyboard */,
-				A5C21E0A1E9CDC8500AB288F /* LaunchScreen.storyboard */,
+				A51E327C1FCC376E00106088 /* LaunchScreen.storyboard */,
 				A508EB111E81634C00D05615 /* Assets.xcassets */,
 				A508EB161E81634C00D05615 /* Info.plist */,
 				A508EB051E81634C00D05615 /* Supporting Files */,
@@ -167,8 +147,6 @@
 			children = (
 				A52A87921E8A6E52008DD9FD /* Consumer.h */,
 				A52A878C1E8A6E52008DD9FD /* Consumer.m */,
-				A52A887D1E8D0732008DD9FD /* Rate.h */,
-				A52A887E1E8D0732008DD9FD /* Rate.m */,
 				A52A87891E8A6E52008DD9FD /* Card.h */,
 				A52A87901E8A6E52008DD9FD /* Card.m */,
 				A52A878F1E8A6E52008DD9FD /* Session.h */,
@@ -184,26 +162,18 @@
 		A52A879C1E8A8A8A008DD9FD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A52A879D1E8A8ACB008DD9FD /* SourceCardCell.h */,
-				A52A879E1E8A8ACB008DD9FD /* SourceCardCell.m */,
-				A52A87A01E8A8C7C008DD9FD /* DestCardCell.h */,
-				A52A87A11E8A8C7C008DD9FD /* DestCardCell.m */,
-				A52A87A31E8A8D14008DD9FD /* SubmitCell.h */,
-				A52A87A41E8A8D14008DD9FD /* SubmitCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		A52A87AA1E8AA197008DD9FD /* Controlers */ = {
+		A52A87AA1E8AA197008DD9FD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				A508EB0B1E81634C00D05615 /* TransferController.h */,
 				A508EB0C1E81634C00D05615 /* TransferController.m */,
 				A52A87AF1E8AA41D008DD9FD /* WebViewController.h */,
 				A52A87B01E8AA41D008DD9FD /* WebViewController.m */,
-				A5C21CE11E927C9000AB288F /* WebViewController.xib */,
 			);
-			name = Controlers;
 			path = Controllers;
 			sourceTree = "<group>";
 		};
@@ -222,10 +192,6 @@
 				A50F90DD1E9AF51500C35165 /* NSDictionary+Values.m */,
 				A50F90DF1E9AF52E00C35165 /* NSMutableDictionary+Values.h */,
 				A50F90E01E9AF52E00C35165 /* NSMutableDictionary+Values.m */,
-				A52A87C51E8BBC78008DD9FD /* NSBundle+Values.h */,
-				A52A87C61E8BBC78008DD9FD /* NSBundle+Values.m */,
-				A5C21CB51E92702600AB288F /* UIViewController+Alert.h */,
-				A5C21CB61E92702600AB288F /* UIViewController+Alert.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -272,7 +238,7 @@
 		A508EAFA1E81634C00D05615 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = payneteasy;
 				TargetAttributes = {
 					A508EB011E81634C00D05615 = {
@@ -305,9 +271,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A52A87C31E8BBA08008DD9FD /* transfer.html in Resources */,
+				A51E327D1FCC376F00106088 /* LaunchScreen.storyboard in Resources */,
 				A508EB121E81634C00D05615 /* Assets.xcassets in Resources */,
-				A5C21CE21E927C9000AB288F /* WebViewController.xib in Resources */,
-				A5C21E0C1E9CDC8500AB288F /* LaunchScreen.storyboard in Resources */,
 				A508EB101E81634C00D05615 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,13 +286,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PaynetEasyTransferExample-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		580BB2F5B5D490980F9055EB /* [CP] Copy Pods Resources */ = {
@@ -369,24 +337,18 @@
 			files = (
 				A52A87941E8A6E52008DD9FD /* Consumer.m in Sources */,
 				A52A87971E8A6E52008DD9FD /* Transaction.m in Sources */,
-				A5C21CB71E92702600AB288F /* UIViewController+Alert.m in Sources */,
 				A52A87951E8A6E52008DD9FD /* Session.m in Sources */,
 				A508EB0D1E81634C00D05615 /* TransferController.m in Sources */,
 				A52A87961E8A6E52008DD9FD /* Card.m in Sources */,
-				A52A87A51E8A8D14008DD9FD /* SubmitCell.m in Sources */,
 				A52A87B21E8AA41D008DD9FD /* WebViewController.m in Sources */,
-				A52A87A21E8A8C7C008DD9FD /* DestCardCell.m in Sources */,
 				A5C21CFB1E93C98300AB288F /* TestServer.m in Sources */,
-				A52A87C71E8BBC78008DD9FD /* NSBundle+Values.m in Sources */,
 				A50F90E11E9AF52E00C35165 /* NSMutableDictionary+Values.m in Sources */,
 				A5C21D011E94E88A00AB288F /* TestMerchantServer.m in Sources */,
 				A508EB0A1E81634C00D05615 /* AppDelegate.m in Sources */,
-				A52A879F1E8A8ACB008DD9FD /* SourceCardCell.m in Sources */,
 				A50F90DE1E9AF51500C35165 /* NSDictionary+Values.m in Sources */,
 				A5CD46451EC32141004AF3E5 /* Receipt.m in Sources */,
 				A5C21CF81E93C86100AB288F /* TestPaynetServer.m in Sources */,
 				A508EB071E81634C00D05615 /* main.m in Sources */,
-				A52A887F1E8D0732008DD9FD /* Rate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,14 +363,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		A5C21E0A1E9CDC8500AB288F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A5C21E0B1E9CDC8500AB288F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -421,7 +375,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -429,7 +385,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -468,7 +428,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -476,7 +438,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

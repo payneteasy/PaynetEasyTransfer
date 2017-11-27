@@ -11,25 +11,30 @@ pod "PaynetEasyTransfer", :git => 'git://github.com/payneteasy/PaynetEasyTransfe
 
 ## Sample Code
 
-### Import PaynetEasyTransferAPI module
+### Import PaynetEasyTransferAPI modules
 
 ```obj-c
-#import "PaynetEasyTransferAPI.h"
+#import "PaynetEasyAPI.h"
+#import "MerchantAPI.h"
 ```
 
-### Create and setup PaynetEasyTransferAPI instance
+### Create PaynetEasyAPI instance
 
 ```obj-c
-PaynetEasyTransferAPI *transferApi = [[PaynetEasyTransferAPI alloc] init];
-transferApi.paynetURL = [NSURL URLWithString:kPaynetAddress];
-transferApi.merchantAuthURL = [NSURL URLWithString:kMerchantAuthAddress];
-transferApi.merchantTransferRateURL = [NSURL URLWithString:kMerchantTransferRateAddress];
-transferApi.merchantTransferInitURL = [NSURL URLWithString:kMerchantTransferInitAddress];
+PaynetEasyAPI *transferApi = [[PaynetEasyAPI alloc] initWithAddress:kPaynetAddress];
+```
+
+### Create MerchantAPI instance
+
+```obj-c
+MerchantAPI *merchantApi = [[MerchantAPI alloc] initWithAddress:kMerchantAddress];
 ```
 
 ### Implement models classes
 Examples implementation are in a folder Models.
 ```obj-c
+#import "CardProtocol.h"
+
 @interface Card : NSObject <CardProtocol>
 
 @property (nonatomic, strong) NSString *number;
@@ -39,17 +44,6 @@ Examples implementation are in a folder Models.
 @property (nonatomic, strong) NSString *cardHolder;
 
 @end
-```
-
-### Get transfer rate (optional)
-
-```obj-c
-Rate *rate = [[Rate alloc] init];
-[transferApi requestTransferRate:rate completeBlock:^(BOOL result, NSError *error) {
-    if (result) {
-        // calc and show comission in UI
-    }
-}];
 ```
 
 ### Transfer money
@@ -104,7 +98,7 @@ Session *session = [[Session alloc] init];
                                 // open redirectUrl in webView
                             }
                             continueBlock:^(BOOL *stop) {
-                                // set YES if you'd like to break the transaction
+                                // set YES if want to break the transaction
                                 // *stop = YES;
                             }
                             completeBlock:^(BOOL result, NSError *error) {

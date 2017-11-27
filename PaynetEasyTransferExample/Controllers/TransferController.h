@@ -10,6 +10,13 @@
 
 @interface TransferController : UIViewController
 
+@property (nonatomic, weak) IBOutlet UITextField *fieldSourceCardNumber;
+@property (nonatomic, weak) IBOutlet UITextField *fieldSourceExpiryMonth;
+@property (nonatomic, weak) IBOutlet UITextField *fieldSourceExpiryYear;
+@property (nonatomic, weak) IBOutlet UITextField *fieldSourceSecurityCode;
+@property (nonatomic, weak) IBOutlet UITextField *fieldSourceCardHolder;
+@property (nonatomic, weak) IBOutlet UITextField *fieldDestCardNumber;
+@property (nonatomic, weak) IBOutlet UITextField *fieldAmount;
 
 @end
 
